@@ -5,10 +5,12 @@
  */
 package org.interfaces;
 
+import org.models.ModuleModel;
+
 /**
  *
  * @author MSarazua
  */
 public interface CrudModule {
-    
+    public boolean insertar(ModuleModel module);
 }

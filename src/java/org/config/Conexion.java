@@ -31,7 +31,7 @@ public class Conexion {
     public Connection open() throws ClassNotFoundException{        
         try {  
                 Class.forName(driver);
-                coneccion = DriverManager.getConnection(stringConnectionUrl,"USR_UMG", "umg123");
+                coneccion = DriverManager.getConnection(stringConnectionUrl,"USR_UMG", "umg12345");
         } catch (SQLException e) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);            
             System.out.println("Excepción: " + e.getMessage());
