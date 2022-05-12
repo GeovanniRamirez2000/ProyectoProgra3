@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioCliente?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioCliente.wsdl"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioCliente?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioCliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioProducto?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioProducto.wsdl"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioProducto?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioDepartamento?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioDepartamento.wsdl"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioDepartamento?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioDepartamento.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioMunicipio?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioMunicipio.wsdl"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioMunicipio?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioMunicipio.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioPedido?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioPedido.wsdl"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioPedido?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioPedido.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioDetallePedido?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioDetallePedido.wsdl"/>
+    <system systemId="http://localhost:8080/ExamenParcial2/ServicioDetallePedido?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioDetallePedido.xsd_1.xsd"/>
+    <system systemId="https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx?wsdl" uri="wsdl/www.banguat.gob.gt/variables/ws/TipoCambio.asmx.wsdl"/>
+</catalog>
