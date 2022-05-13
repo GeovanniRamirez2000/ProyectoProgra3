@@ -44,21 +44,22 @@
                             </a>
                             <div class="collapse" id="collapseCliente" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="ControllerExamenParcial2?accion=verCliente">Ver Clientes</a>
-                                    <a class="nav-link" href="ControllerExamenParcial2?accion=crearCliente">Crear Clientes</a>
+                                    <a class="nav-link" href="createModules.jsp">Crear Modulos</a>
+                                    <a class="nav-link" href="">Ver Modulos</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProducto" aria-expanded="false" aria-controls="collapseProducto">
+                            <a class="nav-link collapsed" href="createRolls.jsp" data-bs-toggle="collapse" data-bs-target="#collapseProducto" aria-expanded="false" aria-controls="collapseProducto">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Productos
+                                Roles
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseProducto" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="ControllerExamenParcial2?accion=verProducto">Ver Productos</a>
-                                    <a class="nav-link" href="ControllerExamenParcial2?accion=crearProducto">Crear Producto</a>
+                                    <a class="nav-link" href="createRolls.jsp">Crear Roles</a>
+                                    <a class="nav-link" href="viewRolls.jsp">Ver Roles</a>
                                 </nav>
                             </div>
+                           
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLugares" aria-expanded="false" aria-controls="collapseLugares">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Lugares
