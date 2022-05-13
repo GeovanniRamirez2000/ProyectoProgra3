@@ -71,9 +71,7 @@ public class DaoUser implements CrudUser {
     @Override
     public ModelUser list(int id) {
         try {
-            strSql = "SELECT U.ID_USUARIO, U.NOMBRE, U.APELLIDO, U.USUARIO, U.PASSWORD, U.ID_ROL, "
-                    + "U.FECHA_CREA, U.ACTIVO, U.FECHA_MOD, U.USUARIO_CREA, U.USUARIO_MOD, U.CODIGO,"
-                    + " R.NOMBRE DESCROL FROM USUARIO U JOIN ROL R ON R.ID_ROL = U.ID_ROL WHERE U.ID_USUARIO = " + id;
+            strSql = "SELECT * FROM USUARIO WHERE ID_USUARIO = " + id;
             conexion.open();
             rs = conexion.executeQuery(strSql);
             while (rs.next()) {
@@ -89,7 +87,6 @@ public class DaoUser implements CrudUser {
                 usuario.setUsuarioCrea(rs.getString("USUARIO_CREA"));
                 usuario.setUsuarioMod(rs.getString("USUARIO_MOD"));
                 usuario.setCodigo(rs.getString("CODIGO"));
-                usuario.setDescRol(rs.getString("DESCROL"));
             }
             rs.close();
             conexion.close();

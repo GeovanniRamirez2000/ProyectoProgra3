@@ -24,9 +24,6 @@
                         <br>
                         <h1 class="mt-5">Usuario</h1>
                         <br />
-
-
-
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                             <thead>
                                 <tr>
@@ -61,8 +58,8 @@
                                     <td class="text-center"><%= info.getFechaCrea()%></td>
                                     <td class="text-center"><%= info.getFechaMod()%></td>
                                     <td class="text-center"> 
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                        <button type="button" class="btn btn-info">Editar</button>
+                                        <a class="btn btn-info" href="UserController?accion=editar&idUsuario=<%=info.getIdUsuario()%>">Editar</a>
+                                        <a class="btn btn-danger" href="UserController?accion=delete&idUsuario=<%=info.getIdUsuario()%>">Eliminar</a>
                                     </td>
                                 </tr>
                                 <%

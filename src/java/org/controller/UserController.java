@@ -79,8 +79,8 @@ public class UserController extends HttpServlet {
                 acceso = crear;
                 break;
 
-            case "show":
-                request.setAttribute("idUsuario", request.getParameter("id"));
+            case "editar":
+                request.setAttribute("idUsuario", request.getParameter("idUsuario"));
                 acceso = ver;
                 break;
             case "store":
@@ -142,7 +142,7 @@ public class UserController extends HttpServlet {
                 acceso = crear;
                 break;
             case "delete":
-                infoModel.setIdUsuario(Integer.parseInt(request.getParameter("id")));
+                infoModel.setIdUsuario(Integer.parseInt(request.getParameter("IdUsuario")));
                 infoDAO.eliminar(infoModel);
                 acceso = inicio;
                 break;
