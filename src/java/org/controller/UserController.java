@@ -113,6 +113,7 @@ public class UserController extends HttpServlet {
                 acceso = inicio;
                 break;
             case "update":
+
                 int idUsuario = Integer.parseInt(request.getParameter("IdUsuario"));
                 idRol = Integer.parseInt(request.getParameter("idRol"));
                 activo = Integer.parseInt(request.getParameter("activo"));
@@ -126,6 +127,7 @@ public class UserController extends HttpServlet {
                 usuarioMod = request.getParameter("usuarioMod");
                 codigo = request.getParameter("codigo");
 
+                infoModel.setIdUsuario(idUsuario);
                 infoModel.setIdRol(idRol);
                 infoModel.setActivo(activo);
                 infoModel.setNombre(nombre);
@@ -142,7 +144,7 @@ public class UserController extends HttpServlet {
                 acceso = inicio;
                 break;
             case "delete":
-                infoModel.setIdUsuario(Integer.parseInt(request.getParameter("IdUsuario")));
+                infoModel.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
                 infoDAO.eliminar(infoModel);
                 acceso = inicio;
                 break;
