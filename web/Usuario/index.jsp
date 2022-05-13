@@ -32,9 +32,12 @@
                                 <tr>
                                     <th class="text-center">Id</th>
                                     <th class="text-center">Nombre</th>
-                                    <th class="text-center">Nit</th>
-                                    <th class="text-center">Telefono</th>
-                                    <th class="text-center">Direccion</th>
+                                    <th class="text-center">Usuario</th>
+                                    <th class="text-center">Pass</th>
+                                    <th class="text-center">Rol</th>
+                                    <th class="text-center">Fecha creacion</th>
+                                    <th class="text-center">Fecha Actualizacion</th>
+                                    <th class="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,7 +57,13 @@
                                     <td class="text-center"><%= info.getNombre()%> <%= info.getApellido()%></td>
                                     <td class="text-center"><%= info.getUsuario()%></td>
                                     <td class="text-center"><%= info.getPassword()%></td>
+                                    <td class="text-center"><%= info.getDescRol()%></td>
                                     <td class="text-center"><%= info.getFechaCrea()%></td>
+                                    <td class="text-center"><%= info.getFechaMod()%></td>
+                                    <td class="text-center"> 
+                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                        <button type="button" class="btn btn-info">Editar</button>
+                                    </td>
                                 </tr>
                                 <%
                                         }

@@ -25,7 +25,7 @@ public class Conexion {
 
     //Cadena de Conexion
     String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-EVU7IN2\\SQLEXPRESS:1433;"
-            + "databaseName=TEMARIOAPII;";
+            + "databaseName=PROYECTO_PROGRA3;";
     //Driver o controlador JDBC
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
