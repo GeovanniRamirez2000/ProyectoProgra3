@@ -16,7 +16,7 @@
     <body class="col-md-12" >
 
         <div id="layoutSidenav_content">
-             <h1 class="mt-5">Actualizar Rol</h1> <h1 class="mt-5">Actualizar Rol</h1>
+            
             <main >
 
                 <div class="container-fluid px-4 row">

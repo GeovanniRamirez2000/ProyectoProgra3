@@ -27,6 +27,7 @@ public class RollController extends HttpServlet {
     
      String listar = "createRolls.jsp";
      String listar2 = "viewRolls.jsp";
+    
     String add = "Cliente/clienteIngreso.jsp";
     String edit = "updateRolls.jsp";
     String delete = "";
@@ -70,7 +71,7 @@ public class RollController extends HttpServlet {
 
         switch (action) {
             case "read":
-                acceso = listar;
+                acceso = listar2;
                 break;
 
             case "nuevo":
@@ -109,26 +110,12 @@ public class RollController extends HttpServlet {
                 String tipopago = request.getParameter("TIPO_PAGO");
                 String fecha = request.getParameter("FECHA");
                
-               /*
-                factura.setID_CLIENTE(Integer.parseInt(idCliente));
-                factura.setOBSERVACION(observacion);
-                factura.setPAIS(pais);
-                factura.setTOTAL(Double.parseDouble(total));
-                factura.setTOTAL_USD(Double.parseDouble(totalusd));
-                factura.setTIPO_PAGO(Integer.parseInt(tipopago));
-                bitacora.setFECHA(Date.valueOf(fecha));
-   
-                
-     
-                daoCliente.insertar2(factura);
-                daoCliente.insertar3(bitacora);
-                acceso = listar;
-                */
+              
                 break;
             case "editar":
-                //obtenemos el id de la fila que estamos seleccionando y se la pasamos al formulario de editar
+                
                 request.setAttribute("idRoll", request.getParameter("id"));
-                //Redireccionamos a la pagina de edición
+               
                 acceso = edit;
                 break;
             case "update":
@@ -163,9 +150,12 @@ public class RollController extends HttpServlet {
                 break;
             case "delete":
               
- 
-              // daoCliente.eliinar(kardex);
-                acceso = listar;
+               roll.setIdRol(Integer.parseInt(request.getParameter("id")));
+               daoRoll.eliminar(roll);
+                
+                
+             
+                acceso = listar2;
                 break;
 
         }

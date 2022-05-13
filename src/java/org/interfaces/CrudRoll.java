@@ -19,4 +19,5 @@ public interface CrudRoll {
 
     public boolean insertar(ModelRoll roll);
      public boolean modificar(ModelRoll roll);
+     public boolean eliminar(ModelRoll roll);
 }

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.config.Conexion;
-import org.interfaces.CrudModule;
+
 import org.interfaces.CrudRoll;
 import org.models.ModelRoll;
 import org.models.ModuleModel;
@@ -69,36 +69,36 @@ public class DaoRoll implements CrudRoll{
     
     @Override
     public ModelRoll list(int id) {
-        /*
+        
         try {
-            strSql = "SELECT * FROM KARDEX WHERE ID_KARDEX = " + id;
+            strSql = "SELECT * FROM ROL WHERE ID_ROL = " + id;
             conexion.open();
             rs = conexion.executeQuery(strSql);
 
             while (rs.next()) {
              
-                kaardex.setIdKardex(rs.getInt("ID_KARDEX"));
-                kaardex.setIdUsuario(rs.getString("ID_USUARIO"));
-                kaardex.setIdProducto(rs.getString("ID_PRODUCTO"));
-                kaardex.setIdTipoMov(rs.getString("ID_TIPO_MOVIMIENTO"));
-                kaardex.setCantidad(rs.getInt("CANTIDAD"));
-                kaardex.setExistencia(rs.getInt("EXISTENCIA"));
-                kaardex.setSaldo(rs.getInt("SALDO"));
-                kaardex.setDescripcion(rs.getString("DESCRIPCION"));
-                kaardex.setFecha(rs.getDate("FECHA"));
+                roll.setIdRol(rs.getInt("ID_ROL"));
+                roll.setNombre(rs.getString("NOMBRE"));
+                roll.setDescripcion(rs.getString("DESCRIPCION"));
+                roll.setActivo(rs.getInt("ACTIVO"));
+                roll.setUCreador(rs.getString("USUARIO_CREA"));
+                roll.setUMod(rs.getString("USUARIO_MOD"));
+                roll.setFechaCrea(rs.getString("FECHA_CREA"));
+                roll.setFechaMod(rs.getString("FECHA_MOD"));
+                
             }
             rs.close();
             conexion.close();
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoRoll.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoRoll.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return kaardex;
-        */
-        return null;
+        return roll;
+        
+      
     }
     
     
@@ -135,18 +135,11 @@ public class DaoRoll implements CrudRoll{
 "DESCRIPCION='"+roll.getDescripcion()+"',\n" +
 "ACTIVO="+roll.getActivo()+",\n" +
 "USUARIO_CREA='"+roll.getUCreador()+"',\n" +
-"USUARIO_MOD='"+roll.getUCreador()+"',\n" +
+"USUARIO_MOD='"+roll.getUMod()+"',\n" +
 "FECHA_CREA='"+roll.getFechaCrea()+"',\n" +
 "FECHA_MOD='"+roll.getFechaMod()+"'\n" +
 "WHERE ID_ROL="+roll.getIdRol()+";";
-         /* strSql = "UPDATE CLIENTE " +
-                 "SET " +
-                 "NOMBRE = '" + cliente.getNombre() + "', " +
-                 "APELLIDO = '" + cliente.getApellido()+ "', " + 
-                 "NIT = '" + cliente.getNit() + "', " + 
-                 "TELEFONO = '" + cliente.getTelefono() + "', " +
-                 "DIRECCION = '" + cliente.getDireccion()+ "' " +
-                 "WHERE ID_CLIENTE =  " + cliente.getIdCliente();*/
+        
         try {
             //se abre una conexión hacia la BD
             conexion.open();
@@ -160,6 +153,28 @@ public class DaoRoll implements CrudRoll{
             return false;
         } catch(Exception ex){
             Logger.getLogger(DaoRoll.class.getName()).log(Level.SEVERE, null, ex);            
+        }
+        return respuesta;
+    }
+    
+    @Override
+     public boolean eliminar(ModelRoll roll) {
+        //Se prepara la sentencia SQL a ejecutar en la BD
+        strSql = "delete ROL where ID_ROL ="+roll.getIdRol()+"";
+        
+        try {
+            
+            conexion.open();
+            //Se ejecuta la instrucción y retorna si la ejecución fue satisfactoria
+            respuesta = conexion.executeSql(strSql);
+            //Se cierra la conexión hacia la BD
+            conexion.close();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoRoll.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (Exception ex) {
+            Logger.getLogger(DaoRoll.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;
     }
