@@ -10,18 +10,6 @@
 <message name="getShowUsuarioResponse">
 <part name="parameters" element="tns:getShowUsuarioResponse"/>
 </message>
-<message name="UpdateUsuario">
-<part name="parameters" element="tns:UpdateUsuario"/>
-</message>
-<message name="UpdateUsuarioResponse">
-<part name="parameters" element="tns:UpdateUsuarioResponse"/>
-</message>
-<message name="EliminarUsuario">
-<part name="parameters" element="tns:EliminarUsuario"/>
-</message>
-<message name="EliminarUsuarioResponse">
-<part name="parameters" element="tns:EliminarUsuarioResponse"/>
-</message>
 <message name="getUsuarios">
 <part name="parameters" element="tns:getUsuarios"/>
 </message>
@@ -34,18 +22,22 @@
 <message name="InsertUsuarioResponse">
 <part name="parameters" element="tns:InsertUsuarioResponse"/>
 </message>
+<message name="EliminarUsuario">
+<part name="parameters" element="tns:EliminarUsuario"/>
+</message>
+<message name="EliminarUsuarioResponse">
+<part name="parameters" element="tns:EliminarUsuarioResponse"/>
+</message>
+<message name="UpdateUsuario">
+<part name="parameters" element="tns:UpdateUsuario"/>
+</message>
+<message name="UpdateUsuarioResponse">
+<part name="parameters" element="tns:UpdateUsuarioResponse"/>
+</message>
 <portType name="ServicioUser">
 <operation name="getShowUsuario">
 <input wsam:Action="http://webServices.org/ServicioUser/getShowUsuarioRequest" message="tns:getShowUsuario"/>
 <output wsam:Action="http://webServices.org/ServicioUser/getShowUsuarioResponse" message="tns:getShowUsuarioResponse"/>
-</operation>
-<operation name="UpdateUsuario">
-<input wsam:Action="http://webServices.org/ServicioUser/UpdateUsuarioRequest" message="tns:UpdateUsuario"/>
-<output wsam:Action="http://webServices.org/ServicioUser/UpdateUsuarioResponse" message="tns:UpdateUsuarioResponse"/>
-</operation>
-<operation name="EliminarUsuario">
-<input wsam:Action="http://webServices.org/ServicioUser/EliminarUsuarioRequest" message="tns:EliminarUsuario"/>
-<output wsam:Action="http://webServices.org/ServicioUser/EliminarUsuarioResponse" message="tns:EliminarUsuarioResponse"/>
 </operation>
 <operation name="getUsuarios">
 <input wsam:Action="http://webServices.org/ServicioUser/getUsuariosRequest" message="tns:getUsuarios"/>
@@ -54,6 +46,14 @@
 <operation name="InsertUsuario">
 <input wsam:Action="http://webServices.org/ServicioUser/InsertUsuarioRequest" message="tns:InsertUsuario"/>
 <output wsam:Action="http://webServices.org/ServicioUser/InsertUsuarioResponse" message="tns:InsertUsuarioResponse"/>
+</operation>
+<operation name="EliminarUsuario">
+<input wsam:Action="http://webServices.org/ServicioUser/EliminarUsuarioRequest" message="tns:EliminarUsuario"/>
+<output wsam:Action="http://webServices.org/ServicioUser/EliminarUsuarioResponse" message="tns:EliminarUsuarioResponse"/>
+</operation>
+<operation name="UpdateUsuario">
+<input wsam:Action="http://webServices.org/ServicioUser/UpdateUsuarioRequest" message="tns:UpdateUsuario"/>
+<output wsam:Action="http://webServices.org/ServicioUser/UpdateUsuarioResponse" message="tns:UpdateUsuarioResponse"/>
 </operation>
 </portType>
 <binding name="ServicioUserPortBinding" type="tns:ServicioUser">
@@ -67,7 +67,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="UpdateUsuario">
+<operation name="getUsuarios">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="InsertUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -85,16 +94,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getUsuarios">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="InsertUsuario">
+<operation name="UpdateUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
