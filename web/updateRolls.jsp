@@ -51,7 +51,7 @@
                             
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Usuario creador</label>
-                                <input type="text" value="<%= roll.getUCreador()%>" name="Ucreador" class="form-control" id="inputPassword2" placeholder="Usuario creador">
+                                <input type="text" readonly="readonly" value="<%= roll.getUCreador()%>" name="Ucreador" class="form-control" id="inputPassword2" placeholder="Usuario creador">
                             </div>
                              <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Usuario Mod</label>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Fecha creación</label>
-                                <input type="date" value="<%= roll.getFechaCrea()%>" name="fcreacion" class="form-control" id="inputPassword2" placeholder="Fecha creación">
+                                <input type="date" readonly="readonly" value="<%= roll.getFechaCrea()%>" name="fcreacion" class="form-control" id="inputPassword2" placeholder="Fecha creación">
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Fecha Mod</label>
