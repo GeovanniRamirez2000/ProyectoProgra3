@@ -14,5 +14,6 @@ import org.models.ModuleModel;
  */
 public interface CrudModule {
     public List listarMenu();
+    public List listarSubMenu();
     public boolean insertar(ModuleModel module);
 }

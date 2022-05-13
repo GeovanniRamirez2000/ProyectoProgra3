@@ -30,7 +30,7 @@ public class DaoModule implements CrudModule{
     public List listarMenu() {
         ArrayList<ModuleModel>lstModulos = new ArrayList<>();
          try {            
-            strSql = "SELECT * FROM MODULO";
+            strSql = "SELECT * FROM MODULO WHERE ACTIVO = 1 AND NIVEL = 1";
             conexion.open();
             rs = conexion.executeQuery(strSql);                             
             
@@ -38,6 +38,33 @@ public class DaoModule implements CrudModule{
                 ModuleModel mod = new ModuleModel();
                 mod.setIdModulo(rs.getInt("ID_MODULO"));
                 mod.setNombre(rs.getString("NOMBRE"));
+                mod.setPath(rs.getString("PATH"));
+                lstModulos.add(mod);
+            }
+            rs.close();
+            conexion.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        } catch(Exception ex){
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        }
+        
+         return lstModulos;
+    }
+    
+    public List listarSubMenu() {
+        ArrayList<ModuleModel>lstModulos = new ArrayList<>();
+         try {            
+            strSql = "SELECT * FROM MODULO WHERE ACTIVO = 1 AND NIVEL = 2";
+            conexion.open();
+            rs = conexion.executeQuery(strSql);                             
+            
+            while (rs.next()) {
+                ModuleModel mod = new ModuleModel();
+                mod.setIdModulo(rs.getInt("ID_MODULO"));
+                mod.setNombre(rs.getString("NOMBRE"));
+                mod.setPath(rs.getString("PATH"));
                 lstModulos.add(mod);
             }
             rs.close();

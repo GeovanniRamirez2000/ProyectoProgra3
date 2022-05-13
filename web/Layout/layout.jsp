@@ -40,24 +40,31 @@
                                 Inicio
                             </a>
                             <div class="sb-sidenav-menu-heading">Mantenimientos</div>
-                            <a class="nav-link collapsed" href="createModules.jsp" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Módulos
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="createModules.jsp">Módulos</a>
+                            </nav>
                             <%
                                 DaoModule daoModule = new DaoModule();
                                 List<ModuleModel> lstModulos = daoModule.listarMenu();
+                                List<ModuleModel> lstSubModulos = daoModule.listarSubMenu();
                                 Iterator<ModuleModel> iteratorCliente = lstModulos.iterator();
+                                Iterator<ModuleModel> iteratorSubMods = lstSubModulos.iterator();
                                 ModuleModel module = null;
+                                ModuleModel submodule = null;
                                 while (iteratorCliente.hasNext()){
-                                module = iteratorCliente.next();                        
-                            %>               
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
+                                module = iteratorCliente.next();          
+                                submodule = iteratorSubMods.next();
+                            %>
+                            <a class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#<%= module.getNombre()%>" aria-expanded="false" aria-controls="collapseCliente">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                <%= module.getIdModulo()%> <%= module.getNombre()%>
+                                    <%= module.getNombre()%>
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+                            <div class="collapse" id="<%= module.getNombre()%>" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<%= submodule.getPath()%>"><%= submodule.getNombre()%></a>
+                                </nav>
+                            </div>
                             <%}%>
                         </div>
                     </div>
