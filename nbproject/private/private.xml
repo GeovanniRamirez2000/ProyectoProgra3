@@ -6,6 +6,7 @@
         <group/>
 =======
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoModule.java</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModuleModel.java</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/index.jsp</file>
@@ -26,6 +27,9 @@
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/viewRolls.jsp</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModelUser.java</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/UserController.java</file>
+=======
+            <file>file:/C:/Users/MSarazua/Documents/NetBeansProjects/ProyectoProgra3/web/createModules.jsp</file>
+>>>>>>> 69c33656a67519dffe0db23c08cac2a3820b6f31
         </group>
 >>>>>>> c23939100f2b6f72c391de41f32f96404073db2e
     </open-files>
