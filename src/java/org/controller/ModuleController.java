@@ -7,19 +7,21 @@ package org.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.dao.DaoModule;
+import org.models.ModuleModel;
 /**
  *
  * @author MSarazua
  */
 @WebServlet(name = "ModuleController", urlPatterns = {"/ModuleController"})
 public class ModuleController extends HttpServlet {
-
+    String listar="index.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -58,7 +60,78 @@ public class ModuleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String acceso="";        
+        String action = request.getParameter("accion");        
+        
+        ModuleModel module = new ModuleModel();
+        DaoModule daoModule = new DaoModule();
+        
+        switch (action){
+            /**case "read":
+                acceso = listar;
+            break;
+            
+            case "nuevo":
+                acceso=add;
+            break;*/
+                
+            case "create" :                
+                String nombre = request.getParameter("nombre");
+                String descripcion = request.getParameter("descripcion");
+                String path = request.getParameter("path");
+                String nivel = request.getParameter("nivel");
+                int modpadre= (Integer.parseInt(request.getParameter("modpadre")));
+                String fcreacion= request.getParameter("fcreacion");
+                String fmod= request.getParameter("fmod");
+                String Ucreador= request.getParameter("Ucreador");
+                String Umod= request.getParameter("Umod");
+                int estado = (Integer.parseInt(request.getParameter("estado")));
+
+                module.setNombre(nombre);
+                module.setDescripcion(descripcion);
+                module.setPath(path);
+                module.setNivel(nivel);
+                module.setIdModPadre(modpadre);
+                module.setFechaCreacion(fcreacion);
+                module.setFechaMod(fmod);
+                module.setUCreador(Ucreador);
+                module.setUMod(Umod);
+                module.setEstado(estado);
+
+                daoModule.insertar(module);
+                acceso = listar;
+            break;
+            /**case "editar":
+                request.setAttribute("idCliente", request.getParameter("id"));
+                acceso = edit;
+            break;            
+            case "update" :
+                int idCliente = Integer.parseInt(request.getParameter("codigo"));
+                nombre = request.getParameter("nombre");
+                apellido = request.getParameter("apellido");
+                nit = request.getParameter("nit");
+                telefono = request.getParameter("telefono");
+                direccion= request.getParameter("direccion");
+                cliente.setIdCliente(idCliente);
+                cliente.setNombre(nombre);
+                cliente.setApellido(apellido);
+                cliente.setNit(nit);
+                cliente.setTelefono(telefono);
+                cliente.setDireccion(direccion);
+                
+                daoCliente.modificar(cliente);
+                acceso = listar;                
+            break;
+            case "delete":
+                int id = Integer.parseInt(request.getParameter("id"));
+                cliente.setIdCliente(id);
+                daoCliente.eliinar(cliente);
+                acceso = listar;
+            break;*/
+        }
+        
+        RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
+        vista.forward(request, response);
     }
 
     /**

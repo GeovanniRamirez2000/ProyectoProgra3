@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Módulo padre</label>
-                                <input type="text" name="modpadre" class="form-control" id="inputPassword2" placeholder="Módulo padre">
+                                <input type="number" name="modpadre" class="form-control" id="inputPassword2" placeholder="Módulo padre">
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Fecha creación</label>
@@ -67,7 +67,7 @@
                                     <option value="0">Inactivo</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Guardar</button>
+                            <button type="submit" name="accion" value="create" class="btn btn-primary mb-2">Guardar</button>
                       </form>
                     </div>
                 </div>
