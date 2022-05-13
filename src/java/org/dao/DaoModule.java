@@ -80,9 +80,14 @@ public class DaoModule implements CrudModule{
     }
     
     public boolean insertar(ModuleModel module) {
-        //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "INSERT INTO MODULO(ID_MODULO, NOMBRE, DESCRIPCION, PATH, NIVEL, ID_MODULO_PADRE, FECHA_CREA, FECHA_MOD, USUARIO_CREA, USUARIO_MOD, ACTIVO) VALUES((SELECT COUNT(ID_MODULO) FROM MODULO)+1, '" + module.getNombre() + "', '" + module.getDescripcion() + "', '" + module.getPath() + "', '" + module.getNivel() + "', "+ module.getIdModPadre() +", '" + module.getFechaCreacion() + "', '" + module.getFechaMod() + "', '" + module.getUCreador() + "', '" + module.getUMod() + "', " + module.getEstado() + ")";
-        System.out.println("Insertar usuario: " + strSql);
+        if(module.getIdModPadre() == 0){
+            strSql = "INSERT INTO MODULO(ID_MODULO, NOMBRE, DESCRIPCION, PATH, NIVEL, ID_MODULO_PADRE, FECHA_CREA, FECHA_MOD, USUARIO_CREA, USUARIO_MOD, ACTIVO) VALUES((SELECT COUNT(ID_MODULO) FROM MODULO)+1, '" + module.getNombre() + "', '" + module.getDescripcion() + "', '" + module.getPath() + "', '" + module.getNivel() + "',(SELECT COUNT(ID_MODULO) FROM MODULO)+1, '" + module.getFechaCreacion() + "', '" + module.getFechaMod() + "', '" + module.getUCreador() + "', '" + module.getUMod() + "', " + module.getEstado() + ")";
+            System.out.println("Insertar modulo: " + strSql);
+        }else{
+            //Se prepara la sentencia SQL a ejecutar en la BD
+            strSql = "INSERT INTO MODULO(ID_MODULO, NOMBRE, DESCRIPCION, PATH, NIVEL, ID_MODULO_PADRE, FECHA_CREA, FECHA_MOD, USUARIO_CREA, USUARIO_MOD, ACTIVO) VALUES((SELECT COUNT(ID_MODULO) FROM MODULO)+1, '" + module.getNombre() + "', '" + module.getDescripcion() + "', '" + module.getPath() + "', '" + module.getNivel() + "', "+ module.getIdModPadre() +", '" + module.getFechaCreacion() + "', '" + module.getFechaMod() + "', '" + module.getUCreador() + "', '" + module.getUMod() + "', " + module.getEstado() + ")";
+            System.out.println("Insertar usuario: " + strSql);
+        }
         try {
             //se abre una conexión hacia la BD
             conexion.open();

@@ -3,7 +3,10 @@
     Created on : 11/05/2022, 08:22:14 PM
     Author     : MSarazua
 --%>
-
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="org.models.ModuleModel"%>
+<%@page import="org.dao.DaoModule"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="Layout/layout.jsp"/>
 <!DOCTYPE html>
@@ -37,11 +40,28 @@
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Nivel</label>
-                                <input type="text" name="nivel" class="form-control" id="inputPassword2" placeholder="Nivel">
+                                <select name="nivel" class="custom-select custom-select-sm">
+                                    <option selected>Seleccionar opción</option>
+                                    <option value="1">Mod. Padre</option>
+                                    <option value="2">Mod. Hijo</option>
+                                </select>
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Módulo padre</label>
-                                <input type="number" name="modpadre" class="form-control" id="inputPassword2" placeholder="Módulo padre">
+                                <select name="modpadre" class="custom-select custom-select-sm">
+                                    <option selected>Seleccionar módulo padre</option>
+                                    <option value = "0">Establecer como padre</option>
+                                    <%
+                                        DaoModule daoModule = new DaoModule();
+                                        List<ModuleModel> lstModulos = daoModule.listarMenu();
+                                        Iterator<ModuleModel> iteratorCliente = lstModulos.iterator();
+                                        ModuleModel module = null;
+                                        while (iteratorCliente.hasNext()){
+                                        module = iteratorCliente.next();
+                                    %>
+                                    <option value="<%= module.getIdModPadre()%>"><%= module.getNombre()%></option>
+                                    <%}%>
+                                </select>
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Fecha creación</label>

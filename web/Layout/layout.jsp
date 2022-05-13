@@ -46,25 +46,15 @@
                             <%
                                 DaoModule daoModule = new DaoModule();
                                 List<ModuleModel> lstModulos = daoModule.listarMenu();
-                                List<ModuleModel> lstSubModulos = daoModule.listarSubMenu();
                                 Iterator<ModuleModel> iteratorCliente = lstModulos.iterator();
-                                Iterator<ModuleModel> iteratorSubMods = lstSubModulos.iterator();
                                 ModuleModel module = null;
-                                ModuleModel submodule = null;
                                 while (iteratorCliente.hasNext()){
-                                module = iteratorCliente.next();          
-                                submodule = iteratorSubMods.next();
+                                module = iteratorCliente.next();
                             %>
-                            <a class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#<%= module.getNombre()%>" aria-expanded="false" aria-controls="collapseCliente">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                    <%= module.getNombre()%>
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <a class="nav-link" href="<%= module.getPath()%>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <%= module.getNombre()%>
                             </a>
-                            <div class="collapse" id="<%= module.getNombre()%>" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<%= submodule.getPath()%>"><%= submodule.getNombre()%></a>
-                                </nav>
-                            </div>
                             <%}%>
                         </div>
                     </div>
