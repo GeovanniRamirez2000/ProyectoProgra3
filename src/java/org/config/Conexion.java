@@ -15,36 +15,36 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author MSarazua
+ * @author GEOVARU
  */
 public class Conexion {
-    private PreparedStatement preparar = null;    
-    private  Connection coneccion=null;    
+
+    private PreparedStatement preparar = null;
+    private Connection coneccion = null;
     private ResultSet resultado = null;
-    private boolean respuesta = false;
-     //Cadena de Conexion
-    String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-2ETSH4C\\SQLEXPRESS:1433;" +
-                                "databaseName=PROYECTO_PROGRA3;";
+    //Cadena de Conexion
+    String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-EVU7IN2\\SQLEXPRESS:1433;"
+            + "databaseName=TEMARIOAPII;";
     //Driver o controlador JDBC
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    
-    public Connection open() throws ClassNotFoundException{        
-        try {  
-                Class.forName(driver);
-                coneccion = DriverManager.getConnection(stringConnectionUrl,"USR_UMG", "umg12345");
+
+    public Connection open() throws ClassNotFoundException {
+        try {
+            Class.forName(driver);
+            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo2000");
         } catch (SQLException e) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);            
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
             System.out.println("Excepción: " + e.getMessage());
         }
         return coneccion;
     }
-    
-    public void close() throws Exception{
+
+    public void close() throws Exception {
         //Connection coneccion = null;
         try {
-            if (coneccion != null){
+            if (coneccion != null) {
                 coneccion.clearWarnings();
-                coneccion.close();                
+                coneccion.close();
             }
         } catch (SQLException e) {
             coneccion = null;
@@ -52,33 +52,34 @@ public class Conexion {
         }
 
     }
-    //INSERT, UPDATE, DELETE
-    public boolean executeSql (String cmd) throws Exception{
-            if (cmd != null)
+
+    public boolean executeSql(String cmd) throws Exception {
+        if (cmd != null) {
             try {
-                    this.preparar = this.coneccion.prepareStatement(cmd);
-                    this.preparar.executeUpdate();
-                    respuesta = true;
+                this.preparar = this.coneccion.prepareStatement(cmd);
+                this.preparar.executeUpdate();
             } catch (SQLException e) {
-                    throw new Exception(e.getMessage());
+                throw new Exception(e.getMessage());
             }
-            else
-                    throw new Exception("El comando a ejecutar es nulo!");
-            return respuesta;
+        } else {
+            throw new Exception("El comando a ejecutar es nulo!");
+        }
+        return true;
     }
-    //SELECT
-    public ResultSet executeQuery (String strSQL){
-        
-            if (strSQL != null)
-            try {        
-                    
-                    preparar = coneccion.prepareStatement(strSQL);                    
-                    resultado = preparar.executeQuery();	
-            } catch (SQLException e) {                    
+
+    public ResultSet executeQuery(String strSQL) {
+
+        if (strSQL != null) {
+            try {
+
+                preparar = coneccion.prepareStatement(strSQL);
+                resultado = preparar.executeQuery();
+            } catch (SQLException e) {
                 System.out.println("Error al ejecutar el query en Clase: Conexion: " + e.toString());
                 Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
             }
-            //close();
-            return resultado;
+        }
+        //close();
+        return resultado;
     }
 }

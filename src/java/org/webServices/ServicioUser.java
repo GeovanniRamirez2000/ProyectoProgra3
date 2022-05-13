@@ -23,8 +23,8 @@ public class ServicioUser {
 
     @WebMethod(operationName = "getUsuarios")
     public List<ModelUser> getUsuarios() {
-        List<ModelUser> lstClientes = infoDao.listar();
-        return lstClientes;
+        List<ModelUser> lstUsuarios = infoDao.listar();
+        return lstUsuarios;
     }
 
     @WebMethod(operationName = "getShowUsuario")

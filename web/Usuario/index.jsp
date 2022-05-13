@@ -1,11 +1,5 @@
 <%-- 
     Document   : index
-    Created on : 12/05/2022, 05:16:19 PM
-    Author     : GEOVARU
---%>
-
-<%-- 
-    Document   : index
     Created on : 5/05/2022, 08:20:18 PM
     Author     : GEOVARU
 --%>
@@ -14,7 +8,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../Layout/layout.jsp"/>
 <%@page import="java.util.List"%>
-<%@page import="servicioCliente.ModelCliente"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,14 +38,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+
                                 <%
 
                                     try {
-                                        servicioCliente.ServicioCliente_Service service = new servicioCliente.ServicioCliente_Service();
-                                        servicioCliente.ServicioCliente port = service.getServicioClientePort();
+                                        wsUser.ServicioUser_Service service = new wsUser.ServicioUser_Service();
+                                        wsUser.ServicioUser port = service.getServicioUserPort();
                                         // TODO process result here
-                                        List<ModelCliente> result = port.getClientes();
-                                        for (ModelCliente info : result) {
+                                        List<wsUser.ModelUser> result = port.getUsuarios();
+                                        for (wsUser.ModelUser info : result) {
                                 %>  
 
                                 <tr>
