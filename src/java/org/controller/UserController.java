@@ -71,7 +71,7 @@ public class UserController extends HttpServlet {
         DaoUser infoDAO = new DaoUser();
 
         switch (action) {
-            case "index":
+            case "read":
                 acceso = inicio;
                 break;
 
@@ -139,7 +139,7 @@ public class UserController extends HttpServlet {
                 infoModel.setCodigo(codigo);
 
                 infoDAO.modificar(infoModel);
-                acceso = crear;
+                acceso = inicio;
                 break;
             case "delete":
                 infoModel.setIdUsuario(Integer.parseInt(request.getParameter("IdUsuario")));
