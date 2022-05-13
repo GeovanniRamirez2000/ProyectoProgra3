@@ -22,6 +22,7 @@ public class Conexion {
     private PreparedStatement preparar = null;
     private Connection coneccion = null;
     private ResultSet resultado = null;
+
     //Cadena de Conexion
     String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-EVU7IN2\\SQLEXPRESS:1433;"
             + "databaseName=TEMARIOAPII;";
@@ -32,6 +33,7 @@ public class Conexion {
         try {
             Class.forName(driver);
             coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo2000");
+
         } catch (SQLException e) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
             System.out.println("Excepción: " + e.getMessage());

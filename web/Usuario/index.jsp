@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../Layout/layout.jsp"/>
 <%@page import="java.util.List"%>
-
+<%@page import="wsUser.ModelUser"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,7 +39,6 @@
                             </thead>
                             <tbody>
 
-
                                 <%
 
                                     try {
@@ -51,11 +50,11 @@
                                 %>  
 
                                 <tr>
-                                    <td class="text-center"><%= info.getIdCliente()%></td>
+                                    <td class="text-center"><%= info.getIdUsuario()%></td>
                                     <td class="text-center"><%= info.getNombre()%> <%= info.getApellido()%></td>
-                                    <td class="text-center"><%= info.getNit()%></td>
-                                    <td class="text-center"><%= info.getTelefono()%></td>
-                                    <td class="text-center"><%= info.getDireccion()%></td>
+                                    <td class="text-center"><%= info.getApellido()%></td>
+                                    <td class="text-center"><%= info.getUsuario()%></td>
+                                    <td class="text-center"><%= info.getDescRol()%></td>
                                 </tr>
                                 <%
                                         }
