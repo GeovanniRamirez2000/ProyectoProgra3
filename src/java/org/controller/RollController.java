@@ -162,8 +162,8 @@ public class RollController extends HttpServlet {
                 
                 break;
             case "delete":
-              
- 
+              daoRoll.eliminar(roll);
+                
               // daoCliente.eliinar(kardex);
                 acceso = listar;
                 break;
