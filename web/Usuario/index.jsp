@@ -24,6 +24,8 @@
                         <br>
                         <h1 class="mt-5">Usuario</h1>
                         <br />
+                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-info "  href="UserController?accion=create"  >Crear</a>
+                        <br />
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                             <thead>
                                 <tr>
@@ -58,8 +60,8 @@
                                     <td class="text-center"><%= info.getFechaCrea()%></td>
                                     <td class="text-center"><%= info.getFechaMod()%></td>
                                     <td class="text-center"> 
-                                        <a class="btn btn-info" href="UserController?accion=editar&idUsuario=<%=info.getIdUsuario()%>">Editar</a>
-                                        <a class="btn btn-danger" href="UserController?accion=delete&idUsuario=<%=info.getIdUsuario()%>">Eliminar</a>
+                                        <a class="btn btn-info" href="UserController?accion=editar&IdUsuario=<%=info.getIdUsuario()%>">Editar</a>
+                                        <a class="btn btn-danger" href="UserController?accion=delete&IdUsuario=<%=info.getIdUsuario()%>">Eliminar</a>
                                     </td>
                                 </tr>
                                 <%
