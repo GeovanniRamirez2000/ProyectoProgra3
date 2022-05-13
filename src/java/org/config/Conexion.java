@@ -23,7 +23,7 @@ public class Conexion {
     private ResultSet resultado = null;
     private boolean respuesta = false;
      //Cadena de Conexion
-    String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-2ETSH4C\\SQLEXPRESS:1433;" +
+    String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-0KMU5UJ\\SQLEXPRESS:1433;" +
                                 "databaseName=PROYECTO_PROGRA3;";
     //Driver o controlador JDBC
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -31,7 +31,7 @@ public class Conexion {
     public Connection open() throws ClassNotFoundException{        
         try {  
                 Class.forName(driver);
-                coneccion = DriverManager.getConnection(stringConnectionUrl,"USR_UMG", "umg12345");
+                coneccion = DriverManager.getConnection(stringConnectionUrl,"USR_UMG", "umg123");
         } catch (SQLException e) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);            
             System.out.println("Excepción: " + e.getMessage());
