@@ -5,6 +5,7 @@
  */
 package org.interfaces;
 
+import java.util.List;
 import org.models.ModuleModel;
 
 /**
@@ -12,5 +13,6 @@ import org.models.ModuleModel;
  * @author MSarazua
  */
 public interface CrudModule {
+    public List listarMenu();
     public boolean insertar(ModuleModel module);
 }

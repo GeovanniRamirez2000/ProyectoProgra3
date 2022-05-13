@@ -27,6 +27,31 @@ public class DaoModule implements CrudModule{
     ResultSet rs = null;    
     boolean respuesta = false;
     
+    public List listarMenu() {
+        ArrayList<ModuleModel>lstModulos = new ArrayList<>();
+         try {            
+            strSql = "SELECT * FROM MODULO";
+            conexion.open();
+            rs = conexion.executeQuery(strSql);                             
+            
+            while (rs.next()) {
+                ModuleModel mod = new ModuleModel();
+                mod.setIdModulo(rs.getInt("ID_MODULO"));
+                mod.setNombre(rs.getString("NOMBRE"));
+                lstModulos.add(mod);
+            }
+            rs.close();
+            conexion.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        } catch(Exception ex){
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        }
+        
+         return lstModulos;
+    }
+    
     public boolean insertar(ModuleModel module) {
         //Se prepara la sentencia SQL a ejecutar en la BD
         strSql = "INSERT INTO MODULO(ID_MODULO, NOMBRE, DESCRIPCION, PATH, NIVEL, ID_MODULO_PADRE, FECHA_CREA, FECHA_MOD, USUARIO_CREA, USUARIO_MOD, ACTIVO) VALUES((SELECT COUNT(ID_MODULO) FROM MODULO)+1, '" + module.getNombre() + "', '" + module.getDescripcion() + "', '" + module.getPath() + "', '" + module.getNivel() + "', "+ module.getIdModPadre() +", '" + module.getFechaCreacion() + "', '" + module.getFechaMod() + "', '" + module.getUCreador() + "', '" + module.getUMod() + "', " + module.getEstado() + ")";

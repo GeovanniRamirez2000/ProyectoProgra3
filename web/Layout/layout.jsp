@@ -3,7 +3,10 @@
     Created on : 5/05/2022, 05:31:43 PM
     Author     : GEOVARU
 --%>
-
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="org.models.ModuleModel"%>
+<%@page import="org.dao.DaoModule"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +62,7 @@
                                     <a class="nav-link" href="viewRolls.jsp">Ver Roles</a>
                                 </nav>
                             </div>
-                           
+
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLugares" aria-expanded="false" aria-controls="collapseLugares">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Lugares
@@ -99,6 +102,22 @@
                                     <a class="nav-link" href="ControllerExamenParcial2?accion=pedido">Crear Pedido</a>
                                 </nav>
                             </div>
+
+                            <%
+                                DaoModule daoModule = new DaoModule();
+                                List<ModuleModel> lstModulos = daoModule.listarMenu();
+                                Iterator<ModuleModel> iteratorCliente = lstModulos.iterator();
+                                ModuleModel module = null;
+                                while (iteratorCliente.hasNext()) {
+                                    module = iteratorCliente.next();
+                            %>               
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                    <%= module.getIdModulo()%> <%= module.getNombre()%>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <%}%>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
