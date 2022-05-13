@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-md-10 ">
                         <br>
-                        <h1 class="mt-5">Clientes</h1>
+                        <h1 class="mt-5">Usuario</h1>
                         <br />
 
 
@@ -52,9 +52,9 @@
                                 <tr>
                                     <td class="text-center"><%= info.getIdUsuario()%></td>
                                     <td class="text-center"><%= info.getNombre()%> <%= info.getApellido()%></td>
-                                    <td class="text-center"><%= info.getApellido()%></td>
                                     <td class="text-center"><%= info.getUsuario()%></td>
-                                    <td class="text-center"><%= info.getDescRol()%></td>
+                                    <td class="text-center"><%= info.getPassword()%></td>
+                                    <td class="text-center"><%= info.getFechaCrea()%></td>
                                 </tr>
                                 <%
                                         }
