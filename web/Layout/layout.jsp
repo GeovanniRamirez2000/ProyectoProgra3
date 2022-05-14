@@ -40,81 +40,20 @@
                                 Inicio
                             </a>
                             <div class="sb-sidenav-menu-heading">Mantenimientos</div>
-                            <a class="nav-link collapsed" href="createModules.jsp" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Módulos
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseCliente" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="createModules.jsp">Crear Modulos</a>
-                                    <a class="nav-link" href="">Ver Modulos</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="createRolls.jsp" data-bs-toggle="collapse" data-bs-target="#collapseProducto" aria-expanded="false" aria-controls="collapseProducto">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Roles
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseProducto" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="createRolls.jsp">Crear Roles</a>
-                                    <a class="nav-link" href="viewRolls.jsp">Ver Roles</a>
-                                </nav>
-                            </div>
-
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLugares" aria-expanded="false" aria-controls="collapseLugares">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Lugares
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLugares" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Departamentos
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="ControllerExamenParcial2?accion=verDepartamento">Ver Departamentos</a>
-                                            <a class="nav-link" href="ControllerExamenParcial2?accion=crearDepartamento">Crear Departamento</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Municipios
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="ControllerExamenParcial2?accion=verMunicipio">Ver Municipios</a>
-                                            <a class="nav-link" href="ControllerExamenParcial2?accion=crearMunicipio">Crear Municipio</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePedido" aria-expanded="false" aria-controls="collapsePedido">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Pedidos
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePedido" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="ControllerExamenParcial2?accion=pedido">Crear Pedido</a>
-                                </nav>
-                            </div>
-
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="indexModules.jsp">Módulos</a>
+                            </nav>
                             <%
                                 DaoModule daoModule = new DaoModule();
                                 List<ModuleModel> lstModulos = daoModule.listarMenu();
                                 Iterator<ModuleModel> iteratorCliente = lstModulos.iterator();
                                 ModuleModel module = null;
-                                while (iteratorCliente.hasNext()) {
-                                    module = iteratorCliente.next();
-                            %>               
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                    <%= module.getIdModulo()%> <%= module.getNombre()%>
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                while (iteratorCliente.hasNext()){
+                                module = iteratorCliente.next();
+                            %>
+                            <a class="nav-link" href="<%= module.getPath()%>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <%= module.getNombre()%>
                             </a>
                             <%}%>
 
