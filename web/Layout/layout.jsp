@@ -94,12 +94,12 @@
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePedido" aria-expanded="false" aria-controls="collapsePedido">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Pedidos
+                                Permisos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePedido" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="ControllerExamenParcial2?accion=pedido">Crear Pedido</a>
+                                    <a class="nav-link" href="Permisos.jsp">Agregar permisos</a>
                                 </nav>
                             </div>
 
