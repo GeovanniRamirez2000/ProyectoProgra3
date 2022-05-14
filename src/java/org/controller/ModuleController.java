@@ -22,6 +22,7 @@ import org.models.ModuleModel;
 @WebServlet(name = "ModuleController", urlPatterns = {"/ModuleController"})
 public class ModuleController extends HttpServlet {
     String listar="index.jsp";
+    String edit="editModules.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -101,33 +102,37 @@ public class ModuleController extends HttpServlet {
                 daoModule.insertar(module);
                 acceso = listar;
             break;
-            /**case "editar":
-                request.setAttribute("idCliente", request.getParameter("id"));
+            case "editar":
+                request.setAttribute("idModulo", request.getParameter("id"));
                 acceso = edit;
             break;            
             case "update" :
-                int idCliente = Integer.parseInt(request.getParameter("codigo"));
+                int idModulo = Integer.parseInt(request.getParameter("codigo"));
                 nombre = request.getParameter("nombre");
-                apellido = request.getParameter("apellido");
-                nit = request.getParameter("nit");
-                telefono = request.getParameter("telefono");
-                direccion= request.getParameter("direccion");
-                cliente.setIdCliente(idCliente);
-                cliente.setNombre(nombre);
-                cliente.setApellido(apellido);
-                cliente.setNit(nit);
-                cliente.setTelefono(telefono);
-                cliente.setDireccion(direccion);
+                descripcion = request.getParameter("descripcion");
+                path = request.getParameter("path");
+                nivel = request.getParameter("nivel");
+                modpadre= (Integer.parseInt(request.getParameter("modpadre")));
+                fcreacion= request.getParameter("fcreacion");
+                fmod= request.getParameter("fmod");
+                Ucreador= request.getParameter("Ucreador");
+                Umod= request.getParameter("Umod");
+                estado = (Integer.parseInt(request.getParameter("estado")));
                 
-                daoCliente.modificar(cliente);
+                module.setNombre(nombre);
+                module.setDescripcion(descripcion);
+                module.setPath(path);
+                module.setNivel(nivel);
+                module.setIdModPadre(modpadre);
+                module.setFechaCreacion(fcreacion);
+                module.setFechaMod(fmod);
+                module.setUCreador(Ucreador);
+                module.setUMod(Umod);
+                module.setEstado(estado);
+                
+                daoModule.modificar(module);
                 acceso = listar;                
             break;
-            case "delete":
-                int id = Integer.parseInt(request.getParameter("id"));
-                cliente.setIdCliente(id);
-                daoCliente.eliinar(cliente);
-                acceso = listar;
-            break;*/
         }
         
         RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web

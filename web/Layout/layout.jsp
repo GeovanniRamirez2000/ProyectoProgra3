@@ -41,7 +41,7 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">Mantenimientos</div>
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="createModules.jsp">Módulos</a>
+                                <a class="nav-link" href="indexModules.jsp">Módulos</a>
                             </nav>
                             <%
                                 DaoModule daoModule = new DaoModule();

@@ -13,6 +13,7 @@ import org.models.ModuleModel;
  * @author MSarazua
  */
 public interface CrudModule {
+    public List listar();
     public List listarMenu();
     public List listarSubMenu();
     public boolean insertar(ModuleModel module);
