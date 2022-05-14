@@ -56,7 +56,6 @@
                                 <%= module.getNombre()%>
                             </a>
                             <%}%>
-
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
