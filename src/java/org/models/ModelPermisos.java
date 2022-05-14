@@ -19,6 +19,16 @@ public class ModelPermisos {
     String usuarioMod;
     int activo;
     String descrol;
+    String descmodulo;
+
+    public String getDescmodulo() {
+        return descmodulo;
+    }
+
+    public void setDescmodulo(String descmodulo) {
+        this.descmodulo = descmodulo;
+    }
+    
 
     public String getDescrol() {
         return descrol;

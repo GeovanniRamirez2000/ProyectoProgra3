@@ -67,7 +67,7 @@
                             <td class="text-center">
                                 <select name="modulo">
                                 
-                                <option value="<%=mostrarpermiso.getId_permiso()%>"><%= mostrarpermiso.getId_modulo() %></option>
+                                <option value="<%=mostrarpermiso.getId_permiso()%>"><%= mostrarpermiso.getDescmodulo() %></option>
                                 
                                 
                                 </select>

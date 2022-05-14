@@ -24,13 +24,15 @@ public class DaoPermiso {
     public List listar() {
         ArrayList<ModelPermisos>lstPermisos = new ArrayList<>();
          try {            
-            strSql = "SELECT R.Nombre DESCROL, P.ID_PERMISO, P.ID_MODULO, P.ID_ROL, P.FECHA_CREA, P.FECHA_MOD, P.FECHA_MOD, P.USUARIO_CREA, P.USUARIO_MOD, P.ACTIVO FROM PERMISO P JOIN ROL R ON R.ID_ROL = P.ID_ROL;";
+            strSql = "SELECT M.Nombre AS DESCMODULO, R.Nombre AS DESCROL, P.ID_PERMISO, P.ID_MODULO, P.ID_ROL, P.FECHA_CREA, P.FECHA_MOD, P.FECHA_MOD, P.USUARIO_CREA, P.USUARIO_MOD, P.ACTIVO FROM PERMISO P \n" +
+"JOIN ROL R ON R.ID_ROL = P.ID_ROL JOIN MODULO M ON M.ID_MODULO = P.ID_MODULO;";
              System.out.println(strSql);
             conexion.open();
             rs = conexion.executeQuery(strSql);                             
             
             while (rs.next()) {
                 ModelPermisos permiso = new ModelPermisos();
+                permiso.setDescmodulo(rs.getString("DESCMODULO"));
                 permiso.setDescrol(rs.getString("DESCROL"));
                 permiso.setId_permiso(rs.getInt("ID_PERMISO"));
                 permiso.setId_modulo(rs.getInt("ID_MODULO"));
