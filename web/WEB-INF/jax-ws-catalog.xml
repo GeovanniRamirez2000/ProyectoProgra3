@@ -13,4 +13,6 @@
     <system systemId="http://localhost:8080/ExamenParcial2/ServicioDetallePedido?WSDL" uri="wsdl/localhost_8080/ExamenParcial2/ServicioDetallePedido.wsdl"/>
     <system systemId="http://localhost:8080/ExamenParcial2/ServicioDetallePedido?xsd=1" uri="wsdl/localhost_8080/ExamenParcial2/ServicioDetallePedido.xsd_1.xsd"/>
     <system systemId="https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx?wsdl" uri="wsdl/www.banguat.gob.gt/variables/ws/TipoCambio.asmx.wsdl"/>
+    <system systemId="http://localhost:8080/ProyectoWeb/ServicioUser?WSDL" uri="wsdl/localhost_8080/ProyectoWeb/ServicioUser.wsdl"/>
+    <system systemId="http://localhost:8080/ProyectoWeb/ServicioUser?xsd=1" uri="wsdl/localhost_8080/ProyectoWeb/ServicioUser.xsd_1.xsd"/>
 </catalog>

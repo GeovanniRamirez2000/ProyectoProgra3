@@ -5,6 +5,8 @@
  */
 package org.models;
 
+import java.util.Objects;
+
 /**
  *
  * @author GEOVARU
@@ -23,6 +25,7 @@ public class ModelUser {
     private String usuarioCrea;
     private String usuarioMod;
     private String codigo;
+    private String descRol;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -119,5 +122,13 @@ public class ModelUser {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    
+
+    public String getDescRol() {
+        return descRol;
+    }
+
+    public void setDescRol(String descRol) {
+        this.descRol = descRol;
+    }
+
 }
