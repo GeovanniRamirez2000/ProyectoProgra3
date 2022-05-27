@@ -88,7 +88,7 @@
                           
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="IngresarVehiculos.jsp" data-bs-toggle="collapse" data-bs-target="#collapseMarca" aria-expanded="false" aria-controls="collapseVeh">
+                            <a class="nav-link collapsed" href="IngresarMarca.jsp" data-bs-toggle="collapse" data-bs-target="#collapseMarca" aria-expanded="false" aria-controls="collapseVeh">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Marcas
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -97,6 +97,17 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="IngresarMarca.jsp">Ingresar Marca</a>
                                      <a class="nav-link" href="verMarcas.jsp">Ver Marca</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="IngresarTipoVeh.jsp" data-bs-toggle="collapse" data-bs-target="#IngresarTipoVeh" aria-expanded="false" aria-controls="collapseVeh">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Tipo de vehículo
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="IngresarTipoVeh" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="IngresarTipoVeh.jsp">Ingresar Tipo de vehículo</a>
+                                     <a class="nav-link" href="verTipoVeh.jsp">Ver Tipo de vehículos</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePedido" aria-expanded="false" aria-controls="collapsePedido">

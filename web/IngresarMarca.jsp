@@ -29,7 +29,6 @@
                                 <input type="text" name="descripcion" class="form-control" id="inputPassword2" placeholder="Descripción">
                             </div>
                             <button type="submit" name="accion" value="create" class="btn btn-primary mb-2" >Agregar Marca</button>
-                           
                       </form>
                     </div>
                 </div>

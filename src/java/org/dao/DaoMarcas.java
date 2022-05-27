@@ -71,4 +71,46 @@ public class DaoMarcas {
         }
         return respuesta;
     }
+    
+    public boolean modificar(ModelMarca marca) {
+         //Se prepara la sentencia SQL a ejecutar en la BD
+        strSql = "UPDATE MARCA SET DESCRIPCION = '" + marca.getDescripcion()+ "' WHERE ID_MARCA =  " + marca.getId_marca();
+        try {
+            //se abre una conexión hacia la BD
+            conexion.open();
+            //Se ejecuta la instrucción y retorna si la ejecución fue satisfactoria
+            respuesta = conexion.executeSql(strSql);
+            //Se cierra la conexión hacia la BD
+            conexion.close();
+             
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);     
+            return false;
+        } catch(Exception ex){
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        }
+        return respuesta;
+    }
+    
+    public ModelMarca list(int id) {
+        try {            
+            strSql = "SELECT * FROM MARCA WHERE ID_MARCA = " + id;
+            conexion.open();
+            rs = conexion.executeQuery(strSql);                             
+            
+            while (rs.next()) {                
+                marca.setId_marca(rs.getInt("ID_MARCA"));
+                marca.setDescripcion(rs.getString("DESCRIPCION"));           
+            }
+            rs.close();
+            conexion.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        } catch(Exception ex){
+            Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
+        }
+        
+         return marca;
+    }
 }

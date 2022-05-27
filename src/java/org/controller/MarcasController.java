@@ -23,7 +23,7 @@ import org.models.ModelMarca;
 @WebServlet(name = "MarcasController", urlPatterns = {"/MarcasController"})
 public class MarcasController extends HttpServlet {
     String listar="verMarcas.jsp";
-
+    String edit="editMarca.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -85,36 +85,18 @@ public class MarcasController extends HttpServlet {
                 daoMarcas.insertar(marca);
                 acceso = listar;
             break;
-            /**case "editar":
-                request.setAttribute("idModulo", request.getParameter("id"));
+            case "editar":
+                request.setAttribute("idMarca", request.getParameter("id"));
                 acceso = edit;
-            break;            */
+            break;
             case "update" :
-                /**int idModulo = Integer.parseInt(request.getParameter("codigo"));
-                nombre = request.getParameter("nombre");
+                int idMarca = Integer.parseInt(request.getParameter("codigo"));
                 descripcion = request.getParameter("descripcion");
-                path = request.getParameter("path");
-                nivel = request.getParameter("nivel");
-                modpadre= (Integer.parseInt(request.getParameter("modpadre")));
-                fcreacion= request.getParameter("fcreacion");
-                fmod= request.getParameter("fmod");
-                Ucreador= request.getParameter("Ucreador");
-                Umod= request.getParameter("Umod");
-                estado = (Integer.parseInt(request.getParameter("estado")));
                 
-                module.setNombre(nombre);
-                module.setDescripcion(descripcion);
-                module.setPath(path);
-                module.setNivel(nivel);
-                module.setIdModPadre(modpadre);
-                module.setFechaCreacion(fcreacion);
-                module.setFechaMod(fmod);
-                module.setUCreador(Ucreador);
-                module.setUMod(Umod);
-                module.setEstado(estado);
+                marca.setDescripcion(descripcion);
                 
-                daoModule.modificar(module);
-                acceso = listar;             */
+                daoMarcas.modificar(marca);
+                acceso = listar;
             break;
         }
         
