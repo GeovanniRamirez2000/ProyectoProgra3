@@ -111,10 +111,9 @@
                                 while (iteratorCliente.hasNext()) {
                                     module = iteratorCliente.next();
                             %>               
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                    <%= module.getIdModulo()%> <%= module.getNombre()%>
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <a class="nav-link" href="<%= module.getPath()%>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <%= module.getNombre()%>
                             </a>
                             <%}%>
 
