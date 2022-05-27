@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-10 ">
                         <br>
-                        <h1 class="mt-5">Usuario</h1>
+                        <h1 class="mt-5">Cliente</h1>
                         <br />
                         <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-info "  href="ClienteController?accion=create"  >Crear</a>
                         <br />

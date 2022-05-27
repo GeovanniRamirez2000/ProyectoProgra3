@@ -24,7 +24,7 @@ public class Conexion {
     private ResultSet resultado = null;
 
     //Cadena de Conexion
-    String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-0KMU5UJ\\SQLEXPRESS:1433;"
+    String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-EVU7IN2\\SQLEXPRESS:1433;"
             + "databaseName=PROYECTO_PROGRA;";
     //Driver o controlador JDBC
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -33,7 +33,7 @@ public class Conexion {
         try {
             Class.forName(driver);
 
-            coneccion = DriverManager.getConnection(stringConnectionUrl, "USR_UMG", "umg123");
+            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo200");
 
          
 

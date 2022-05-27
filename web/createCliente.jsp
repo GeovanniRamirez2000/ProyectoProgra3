@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-10 ">
                         <br>
-                        <h1 class="mt-5">Crear Usuario</h1>
+                        <h1 class="mt-5">Crear Cliente</h1>
 
                         <form class="container row col-12" action="ClienteController" method="get">
                             <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
