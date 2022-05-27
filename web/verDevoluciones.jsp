@@ -32,6 +32,9 @@
                     <div class="col-md-10 ">
                         <br>
                         <h1 class="mt-5">Ver Devoluciones</h1>
+                        <br />
+                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-success "  href="registrarDevolucion.jsp"  >+ Agregar</a>
+                        <br />
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                     <thead>
                         <tr>

@@ -146,7 +146,7 @@ public class DaoVehiculos {
 "  on ce.ID_TIPO_VEHICULO=dv.ID_TIPO_VEHICULO\n" +
 "  inner join VEHICULO_ESTADO ve\n" +
 "  on ce.ID_VEHICULO_ESTADO=ve.ID_VEHICULO_ESTADO \n"
-                    + "WHERE ce.ID_VEHICULO_ESTADO=3 ";
+                    + "WHERE ce.ID_VEHICULO_ESTADO=2 ";
             conexion.open();
             rs = conexion.executeQuery(strSql);       
              System.out.println(strSql);

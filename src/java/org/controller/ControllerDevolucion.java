@@ -30,7 +30,7 @@ String editestado="ModificarEstadoVehiculos.jsp";
 String regresar="verVehiculos.jsp";
 String regresar2= "cambiarEstadoVehiculos.jsp";
 String regresar3 = "registrarDevolucion.jsp";
-String inicio="registrarDevolucion.jsp";
+String inicio="verDevoluciones.jsp";
 String agregar="IngresarVehiculos.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

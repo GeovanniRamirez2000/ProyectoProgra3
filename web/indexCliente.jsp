@@ -59,8 +59,9 @@
                                     <td class="text-center"><%= info.getTelefono()%></td>
                                     <td class="text-center"><%= info.getDireccion()%></td>
                                     <td class="text-center"> 
-                                        <a class="btn btn-info" href="ClienteController?accion=editar&idCliente=<%=info.getIdCliente()%>">Editar</a>
-                                        <a class="btn btn-danger" href="ClienteController?accion=delete&idCliente=<%=info.getIdCliente()%>">Eliminar</a>
+                                        
+                                        <a href="ClienteController?accion=editar&idCliente=<%=info.getIdCliente()%>"><img style="width: 10%" src="editar.png"></a>
+                                        <a href="ClienteController?accion=delete&idCliente=<%=info.getIdCliente()%>"><img style="width: 10%" src="trash.png"></a>
                                     </td>
                                 </tr>
                                 <%}%>

@@ -91,7 +91,7 @@ String agregar="IngresarVehiculos.jsp";
                 System.out.println(id_vehiculo_estado);
                 System.out.println(Modelo);
              
-              acceso = agregar;
+              acceso = regresar;
             break;
             case "read":
                 acceso=regresar;

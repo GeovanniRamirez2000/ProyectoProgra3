@@ -64,8 +64,9 @@
                                     <td class="text-center"><%= info.getFechaCrea()%></td>
                                     <td class="text-center"><%= info.getFechaMod()%></td>
                                     <td class="text-center"> 
-                                        <a class="btn btn-info" href="UserController?accion=editar&idUsuario=<%=info.getIdUsuario()%>">Editar</a>
-                                        <a class="btn btn-danger" href="UserController?accion=delete&idUsuario=<%=info.getIdUsuario()%>">Eliminar</a>
+                                        
+                                        <a href="UserController?accion=editar&idUsuario=<%=info.getIdUsuario()%>"><img style="width: 20%" src="editar.png"></a>
+                                         <a href="UserController?accion=delete&idUsuario=<%=info.getIdUsuario()%>"><img style="width: 20%" src="trash.png"></a>
                                     </td>
                                 </tr>
                                 <%}%>

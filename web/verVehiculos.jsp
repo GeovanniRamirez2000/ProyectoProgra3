@@ -25,6 +25,9 @@
                     <div class="col-md-10 ">
                         <br>
                         <h1 class="mt-5">Ver Vehiculos</h1>
+                        <br />
+                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-success "  href="IngresarVehiculos.jsp"  >+ Agregar</a>
+                        <br />
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                     <thead>
                         <tr>
@@ -65,8 +68,9 @@
                                  <%=mostrarVehiculos.getModelo()%> 
                               </td>
                              <td class="text-center">
-                                 <a href="ControllerVehiculo?accion=editar&id=<%=mostrarVehiculos.getId_vehiculo()%>">Editar</a>
-                                 <a href="ControllerVehiculo?accion=eliminar&id=<%=mostrarVehiculos.getId_vehiculo()%>">Eliminar</a>
+                               
+                                 <a href="ControllerVehiculo?accion=editar&id=<%=mostrarVehiculos.getId_vehiculo()%>"><img style="width: 15%" src="editar.png"></a>
+                                 <a href="ControllerVehiculo?accion=eliminar&id=<%=mostrarVehiculos.getId_vehiculo()%>"><img style="width: 15%" src="trash.png"></a>
                               </td>
                              
                                

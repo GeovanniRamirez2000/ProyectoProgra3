@@ -54,8 +54,9 @@
                                     <td class="text-center"><%= info.getIdTipoPago()%></td>
                                     <td class="text-center"><%= info.getDescripcion()%></td>
                                     <td class="text-center"> 
-                                        <a class="btn btn-info" href="TipoPagoController?accion=editar&idTipoPago=<%=info.getIdTipoPago()%>">Editar</a>
-                                        <a class="btn btn-danger" href="TipoPagoController?accion=delete&idTipoPago=<%=info.getIdTipoPago()%>">Eliminar</a>
+                                       
+                                        <a href="TipoPagoController?accion=editar&idTipoPago=<%=info.getIdTipoPago()%>"><img style="width: 7%" src="editar.png"></a>
+                                        <a href="TipoPagoController?accion=delete&idTipoPago=<%=info.getIdTipoPago()%>"><img style="width: 7%" src="trash.png"></a>
                                     </td>
                                 </tr>
                                 <%}%>
