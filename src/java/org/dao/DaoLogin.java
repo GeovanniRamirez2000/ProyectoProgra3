@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.config.Conexion;
 import org.models.ModuleModel;
-import wsUser.ModelUser;
+import org.models.ModelUser;
 
 
 public class DaoLogin {
