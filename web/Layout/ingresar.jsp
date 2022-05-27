@@ -143,6 +143,19 @@
                                     <a class="nav-link" href="Permisos.jsp">Agregar permisos</a>
                                 </nav>
                             </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReportes" aria-expanded="false" aria-controls="collapseReportes">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                REPORTERIA
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseReportes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="ReporteDocRentas.jsp">- Reporte de documento de la renta</a>
+                                    <a class="nav-link" href="ReporteDevolucion.jsp">- Reporte de devoluciones de vehículos</a>
+                                    <a class="nav-link" href="ReporteRentas.jsp">- Reporte de vehículos rentados</a>
+                                </nav>
+                            </div>
                             <%
                                 DaoModule daoModule = new DaoModule();
                                 List<ModuleModel> lstModulos = daoModule.listarMenu();
