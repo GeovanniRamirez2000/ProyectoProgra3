@@ -72,10 +72,7 @@
                                 <label class="mr-5">Dias de atraso </label>
                                 <input type="text" name="dias_atraso" class="form-control" id="inputPassword2" placeholder="" >
                             </div>
-                 <div class="form-group mx-sm-3 mb-2">
-                                <label class="mr-5">Mora </label>
-                                <input type="text" name="mora" class="form-control" id="inputPassword2" placeholder="" >
-                            </div>
+                 
                           
                             
                                                   

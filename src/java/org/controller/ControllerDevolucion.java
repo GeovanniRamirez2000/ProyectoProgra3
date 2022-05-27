@@ -88,13 +88,16 @@ String agregar="IngresarVehiculos.jsp";
                 String diasatraso = request.getParameter("dias_atraso");
                 String mora = request.getParameter("mora");
                 
+                int d = Integer.parseInt(diasatraso);
+                Double moraa = d * 52.50;
+                
                 devolucion.setId_renta(Integer.parseInt(id_renta));
                 devolucion.setSerie(serie);
                 devolucion.setFecha(fecha);
                 devolucion.setObservaciones(observaciones);
                 devolucion.setId_usuario(Integer.parseInt(id_usuario));
                 devolucion.setDias_atraso(Integer.parseInt(diasatraso));
-                devolucion.setMora(Double.parseDouble(mora));
+                devolucion.setMora(moraa);
                 
                 daoDevolucion.insertar(devolucion);
                 
