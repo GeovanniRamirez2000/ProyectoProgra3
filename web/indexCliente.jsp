@@ -6,9 +6,9 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../Layout/layout.jsp"/>
 <%@page import="java.util.List"%>
 <%@page import="wsUser.ModelUser"%>
+<jsp:include page="Layout/layout.jsp"/>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,6 +23,8 @@
                     <div class="col-md-10 ">
                         <br>
                         <h1 class="mt-5">Usuario</h1>
+                        <br />
+                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-info "  href="UserController?accion=create"  >Crear</a>
                         <br />
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                             <thead>

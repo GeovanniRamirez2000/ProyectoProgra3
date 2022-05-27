@@ -23,9 +23,9 @@ import org.models.ModelUser;
 @WebServlet(name = "UserController", urlPatterns = {"/UserController"})
 public class UserController extends HttpServlet {
 
-    String inicio = "Usuario/index.jsp";
-    String crear = "Usuario/create.jsp";
-    String ver = "Usuario/show.jsp";
+    String inicio = "indexUser.jsp";
+    String crear = "createUser.jsp";
+    String ver = "showUser.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -71,7 +71,7 @@ public class UserController extends HttpServlet {
         DaoUser infoDAO = new DaoUser();
 
         switch (action) {
-            case "index":
+            case "read":
                 acceso = inicio;
                 break;
 
@@ -113,6 +113,7 @@ public class UserController extends HttpServlet {
                 acceso = inicio;
                 break;
             case "update":
+
                 int idUsuario = Integer.parseInt(request.getParameter("IdUsuario"));
                 idRol = Integer.parseInt(request.getParameter("idRol"));
                 activo = Integer.parseInt(request.getParameter("activo"));
@@ -126,6 +127,7 @@ public class UserController extends HttpServlet {
                 usuarioMod = request.getParameter("usuarioMod");
                 codigo = request.getParameter("codigo");
 
+                infoModel.setIdUsuario(idUsuario);
                 infoModel.setIdRol(idRol);
                 infoModel.setActivo(activo);
                 infoModel.setNombre(nombre);
@@ -139,10 +141,10 @@ public class UserController extends HttpServlet {
                 infoModel.setCodigo(codigo);
 
                 infoDAO.modificar(infoModel);
-                acceso = crear;
+                acceso = inicio;
                 break;
             case "delete":
-                infoModel.setIdUsuario(Integer.parseInt(request.getParameter("IdUsuario")));
+                infoModel.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
                 infoDAO.eliminar(infoModel);
                 acceso = inicio;
                 break;

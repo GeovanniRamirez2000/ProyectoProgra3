@@ -65,7 +65,7 @@
                             <td class="text-center"><%= roll.getFechaMod() %></td>
                              <td class="text-center">
                                  <a href="RollController?accion=editar&id=<%= roll.getIdRol() %>">Editar</a>
-                                 <a href="RollController?accion=eliminar&id=<%= roll.getIdRol() %>">Eliminar</a>
+                                 <a href="RollController?accion=delete&id=<%= roll.getIdRol() %>">Eliminar</a>
                              </td>
                              
                                

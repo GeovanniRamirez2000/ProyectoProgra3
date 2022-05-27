@@ -169,7 +169,8 @@ public class DaoUser implements CrudUser {
     @Override
     public boolean eliminar(ModelUser usuario) {
         //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "DELETE USUARIO WHERE ID_USUARIO = " + usuario.getIdUsuario();
+        System.out.print("elimina");
+        strSql = "DELETE  USUARIO WHERE ID_USUARIO =" + usuario.getIdUsuario() + ";";
         try {
             //se abre una conexión hacia la BD
             conexion.open();

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.config.Conexion;
-import org.interfaces.CrudModule;
+
 import org.interfaces.CrudRoll;
 import org.models.ModelRoll;
 import org.models.ModuleModel;
@@ -139,14 +139,7 @@ public class DaoRoll implements CrudRoll{
 "FECHA_CREA='"+roll.getFechaCrea()+"',\n" +
 "FECHA_MOD='"+roll.getFechaMod()+"'\n" +
 "WHERE ID_ROL="+roll.getIdRol()+";";
-         /* strSql = "UPDATE CLIENTE " +
-                 "SET " +
-                 "NOMBRE = '" + cliente.getNombre() + "', " +
-                 "APELLIDO = '" + cliente.getApellido()+ "', " + 
-                 "NIT = '" + cliente.getNit() + "', " + 
-                 "TELEFONO = '" + cliente.getTelefono() + "', " +
-                 "DIRECCION = '" + cliente.getDireccion()+ "' " +
-                 "WHERE ID_CLIENTE =  " + cliente.getIdCliente();*/
+        
         try {
             //se abre una conexión hacia la BD
             conexion.open();
@@ -164,11 +157,13 @@ public class DaoRoll implements CrudRoll{
         return respuesta;
     }
     
+    @Override
      public boolean eliminar(ModelRoll roll) {
         //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "DELETE ROL WHERE ID_ROL = " + roll.getIdRol();
+        strSql = "delete ROL where ID_ROL ="+roll.getIdRol()+"";
+        
         try {
-            //se abre una conexión hacia la BD
+            
             conexion.open();
             //Se ejecuta la instrucción y retorna si la ejecución fue satisfactoria
             respuesta = conexion.executeSql(strSql);
