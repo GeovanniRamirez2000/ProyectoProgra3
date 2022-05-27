@@ -21,7 +21,7 @@ import org.models.ModuleModel;
  */
 @WebServlet(name = "ModuleController", urlPatterns = {"/ModuleController"})
 public class ModuleController extends HttpServlet {
-    String listar="index.jsp";
+    String listar="indexModules.jsp";
     String edit="editModules.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

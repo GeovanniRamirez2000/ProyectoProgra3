@@ -19,7 +19,7 @@ import org.dao.DaoLogin;
 import org.dao.DaoPermiso;
 import org.dao.DaoUser;
 import org.models.ModelPermisos;
-import wsUser.ModelUser;
+import org.models.ModelUser;
 
 /**
  *
