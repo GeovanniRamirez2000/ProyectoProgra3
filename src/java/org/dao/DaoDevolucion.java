@@ -27,6 +27,7 @@ public class DaoDevolucion {
      ModelDevolucion moduledevo = new ModelDevolucion();
     //Variable para crear las sentencias SQL
     String strSql =  "";
+    String strSql2 =  "";
     //Se crea un obejto de tipo conexión para manejar la persistencia hacia la base de datos
     Conexion conexion = new Conexion();    
     ResultSet rs = null;    
@@ -123,7 +124,10 @@ public class DaoDevolucion {
          //Se prepara la sentencia SQL a ejecutar en la BD
          strSql = "insert into DEVOLUCION(ID_DEVOLUCION,ID_RENTA,SERIE,FECHA,OBSERVACIONES,ID_USUARIO,DIAS_ATRASO,MORA) \n" +
 "VALUES ((SELECT ISNULL(MAX(ID_DEVOLUCION),0) + 1 FROM DEVOLUCION), "+ devolucion.getId_renta() +",'"+ devolucion.getSerie() +"','"+ devolucion.getFecha()+"','"+devolucion.getObservaciones()+"',"+devolucion.getId_usuario()+","+devolucion.getDias_atraso()+","+devolucion.getMora()+")";
-       
+        strSql2 = "UPDATE VEHICULO \n" +
+                "SET ID_VEHICULO_ESTADO=1\n" +
+                "WHERE ID_VEHICULO ="+devolucion.getId_vehiculo()+";";
+         
          System.out.println(strSql);
         
         try {
@@ -131,6 +135,7 @@ public class DaoDevolucion {
             conexion.open();
             //Se ejecuta la instrucción y retorna si la ejecución fue satisfactoria
             respuesta = conexion.executeSql(strSql);
+            respuesta = conexion.executeSql(strSql2);
             //Se cierra la conexión hacia la BD
             conexion.close();
              

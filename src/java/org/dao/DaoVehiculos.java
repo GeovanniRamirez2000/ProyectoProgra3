@@ -134,6 +134,48 @@ public class DaoVehiculos {
         
          return lstvehiculos;
     }
+    
+    public List listarVehiculosRentados() {
+        ArrayList<Modelvehiculo>lstvehiculos = new ArrayList<>();
+         try {            
+            strSql = "select ce.ID_VEHICULO 'id_vehiculo',dm.ID_MARCA, dm.DESCRIPCION 'marca',dv.ID_TIPO_VEHICULO, dv.DESCRIPCION 'tipo_vehiculo',ve.ID_VEHICULO_ESTADO,ve.DESCRIPCION 'estadoVe',ce.MODELO\n" +
+"  from VEHICULO ce\n" +
+"  inner join MARCA dm\n" +
+"   on ce.ID_MARCA=dm.ID_MARCA\n" +
+"  inner join TIPO_VEHICULO dv\n" +
+"  on ce.ID_TIPO_VEHICULO=dv.ID_TIPO_VEHICULO\n" +
+"  inner join VEHICULO_ESTADO ve\n" +
+"  on ce.ID_VEHICULO_ESTADO=ve.ID_VEHICULO_ESTADO \n"
+                    + "WHERE ce.ID_VEHICULO_ESTADO=3 ";
+            conexion.open();
+            rs = conexion.executeQuery(strSql);       
+             System.out.println(strSql);
+            
+            while (rs.next()) {
+                Modelvehiculo objve = new Modelvehiculo();
+                objve.setId_vehiculo(rs.getInt("ID_VEHICULO"));
+                objve.setId_marca(rs.getInt("ID_MARCA"));
+                objve.setMarca(rs.getString("marca"));
+                objve.setId_tipo_vehiculo(rs.getInt("ID_TIPO_VEHICULO"));
+                objve.setTipo_de_vehiculo(rs.getString("tipo_vehiculo"));
+                objve.setId_vehiculo_estado(rs.getInt("ID_VEHICULO_ESTADO"));
+                objve.setEstado(rs.getString("estadoVe"));
+                objve.setModelo(rs.getString("MODELO"));
+                lstvehiculos.add(objve);
+            }
+            rs.close();
+            conexion.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoVehiculos.class.getName()).log(Level.SEVERE, null, ex);            
+        } catch(Exception ex){
+            Logger.getLogger(DaoVehiculos.class.getName()).log(Level.SEVERE, null, ex);            
+        }
+        
+         return lstvehiculos;
+    }
+    
+    
      public Modelvehiculo list(int id) {
            
         try {

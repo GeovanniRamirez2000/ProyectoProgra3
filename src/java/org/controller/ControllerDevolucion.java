@@ -29,6 +29,7 @@ public class ControllerDevolucion extends HttpServlet {
 String editestado="ModificarEstadoVehiculos.jsp";
 String regresar="verVehiculos.jsp";
 String regresar2= "cambiarEstadoVehiculos.jsp";
+String regresar3 = "registrarDevolucion.jsp";
 String inicio="registrarDevolucion.jsp";
 String agregar="IngresarVehiculos.jsp";
     /**
@@ -74,6 +75,7 @@ String agregar="IngresarVehiculos.jsp";
         System.out.println(action);
         Modelvehiculo obj1= new Modelvehiculo();
         DaoVehiculos objve= new DaoVehiculos();
+        Modelvehiculo vehiculo = new Modelvehiculo();
         ModelDevolucion devolucion = new ModelDevolucion();
         DaoDevolucion daoDevolucion = new DaoDevolucion(); 
         switch (action){
@@ -87,6 +89,7 @@ String agregar="IngresarVehiculos.jsp";
                 String id_usuario = request.getParameter("id_usuario");
                 String diasatraso = request.getParameter("dias_atraso");
                 String mora = request.getParameter("mora");
+                String id_vehiculoDEV = request.getParameter("id_vehiculo");
                 
                 int d = Integer.parseInt(diasatraso);
                 Double moraa = d * 52.50;
@@ -98,9 +101,11 @@ String agregar="IngresarVehiculos.jsp";
                 devolucion.setId_usuario(Integer.parseInt(id_usuario));
                 devolucion.setDias_atraso(Integer.parseInt(diasatraso));
                 devolucion.setMora(moraa);
+                devolucion.setId_vehiculo(Integer.parseInt(id_vehiculoDEV));
+                
                 
                 daoDevolucion.insertar(devolucion);
-                
+               
             
 
                 acceso = inicio;
@@ -159,7 +164,9 @@ String agregar="IngresarVehiculos.jsp";
                 obj1.setId_vehiculo_estado(id_vehiculo_estado3);
                 objve.editarEstado(obj1);
                 acceso=regresar2;
-                break;
+                break; 
+                
+                
              case "regresar":
                    acceso=inicio;
                  break;

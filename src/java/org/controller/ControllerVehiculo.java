@@ -148,6 +148,14 @@ String agregar="IngresarVehiculos.jsp";
                 objve.editarEstado(obj1);
                 acceso=regresar2;
                 break;
+                case "updateEstado2":
+                int id_vehiculo3=Integer.parseInt(request.getParameter("id_vehiculo"));
+                int id_vehiculo_estado4=Integer.parseInt(request.getParameter("id_vehiculo_estado")); 
+                 obj1.setId_vehiculo(id_vehiculo3);
+                obj1.setId_vehiculo_estado(id_vehiculo_estado4);
+                objve.editarEstado(obj1);
+                acceso=regresar2;
+                break;
              case "regresar":
                    acceso=inicio;
                  break;

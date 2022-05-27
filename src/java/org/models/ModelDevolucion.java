@@ -21,6 +21,17 @@ public class ModelDevolucion {
     int dias_atraso;
     Double mora;
     String usuario;
+    int id_vehiculo;
+
+    public int getId_vehiculo() {
+        return id_vehiculo;
+    }
+
+    public void setId_vehiculo(int id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
+    }
+    
+    
 
     public String getUsuario() {
         return usuario;

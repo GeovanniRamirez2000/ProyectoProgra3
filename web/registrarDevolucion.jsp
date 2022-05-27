@@ -4,6 +4,7 @@
     Author     : INSPIRON 7000 SERIES
 --%>
 
+<%@page import="org.models.Modelvehiculo"%>
 <%@page import="org.models.ModelUser"%>
 <%@page import="org.dao.DaoUser"%>
 <%@page import="java.util.Iterator"%>
@@ -72,7 +73,24 @@
                                 <label class="mr-5">Dias de atraso </label>
                                 <input type="text" name="dias_atraso" class="form-control" id="inputPassword2" placeholder="" >
                             </div>
-                 
+                 <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Vehiculo</label>
+                                 <select name="id_vehiculo" class="custom-select custom-select-sm">
+                     <%
+                                    DaoVehiculos daovehiculo = new DaoVehiculos();
+                                    List<Modelvehiculo> lstvehiculo = daovehiculo.listarVehiculosRentados();
+                                    Iterator<Modelvehiculo> iteratorVehiculo =  lstvehiculo.iterator();
+                                    Modelvehiculo mostrarVehiculo = null;
+                                  
+                                  
+                                    while (iteratorVehiculo.hasNext()){
+                                            mostrarVehiculo = iteratorVehiculo.next(); 
+                                %>
+                    <option value="<%= mostrarVehiculo.getId_vehiculo() %>"><%= mostrarVehiculo.getModelo() %> ID: <%= mostrarVehiculo.getId_vehiculo() %> MARCA: <%= mostrarVehiculo.getMarca() %> </option>
+                     <%}%>
+                </select>
+                               
+                            </div>
                           
                             
                                                   
