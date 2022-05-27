@@ -23,9 +23,9 @@ import org.models.ModelUser;
 @WebServlet(name = "UserController", urlPatterns = {"/UserController"})
 public class UserController extends HttpServlet {
 
-    String inicio = "Usuario/index.jsp";
-    String crear = "Usuario/create.jsp";
-    String ver = "Usuario/show.jsp";
+    String inicio = "indexUser.jsp";
+    String crear = "createUser.jsp";
+    String ver = "showUser.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

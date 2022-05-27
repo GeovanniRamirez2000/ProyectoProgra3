@@ -6,9 +6,9 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../Layout/layout.jsp"/>
 <%@page import="java.util.List"%>
 <%@page import="wsUser.ModelUser"%>
+<jsp:include page="Layout/layout.jsp"/>
 <!DOCTYPE html>
 <html lang="en">
     <head>

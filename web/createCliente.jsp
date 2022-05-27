@@ -10,7 +10,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../Layout/layout.jsp"/>
+<jsp:include page="Layout/layout.jsp"/>
 <!DOCTYPE html>
 <html lang="en">
     <head>

@@ -25,14 +25,14 @@ public class Conexion {
 
     //Cadena de Conexion
     String stringConnectionUrl = "jdbc:sqlserver://DESKTOP-EVU7IN2\\SQLEXPRESS:1433;"
-            + "databaseName=PROYECTO_PROGRA3;";
+            + "databaseName=PROYECTO_PROGRA;";
     //Driver o controlador JDBC
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
     public Connection open() throws ClassNotFoundException {
         try {
             Class.forName(driver);
-            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo2000");
+            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "PUTO EL QUE LO LEA");
 
         } catch (SQLException e) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
