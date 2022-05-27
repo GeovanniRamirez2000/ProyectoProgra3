@@ -13,17 +13,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.dao.DaoMarcas;
-import org.models.ModelMarca;
+import org.dao.DaoTipoVeh;
+import org.models.ModelTipo_Vehiculo;
 
 /**
  *
  * @author MSarazua
  */
-@WebServlet(name = "MarcasController", urlPatterns = {"/MarcasController"})
-public class MarcasController extends HttpServlet {
-    String listar="verMarcas.jsp";
-    String edit="editMarca.jsp";
+@WebServlet(name = "TipoVehController", urlPatterns = {"/TipoVehController"})
+public class TipoVehController extends HttpServlet {
+    String listar="verTipoVeh.jsp";
+    String edit="editTipoVeh.jsp";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,10 +42,10 @@ public class MarcasController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MarcasController</title>");            
+            out.println("<title>Servlet TipoVehController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MarcasController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet TipoVehController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,8 +66,8 @@ public class MarcasController extends HttpServlet {
         String acceso="";        
         String action = request.getParameter("accion");        
         
-        ModelMarca marca = new ModelMarca();
-        DaoMarcas daoMarcas = new DaoMarcas();
+        ModelTipo_Vehiculo tipo = new ModelTipo_Vehiculo();
+        DaoTipoVeh daoTipoVeh = new DaoTipoVeh();
         
         switch (action){
             /**case "read":
@@ -80,37 +81,35 @@ public class MarcasController extends HttpServlet {
             case "create" :                
                 String descripcion = request.getParameter("descripcion");
 
-                marca.setDescripcion(descripcion);
+                tipo.setDescripcion(descripcion);
 
-                daoMarcas.insertar(marca);
+                daoTipoVeh.insertar(tipo);
                 acceso = listar;
             break;
             case "editar":
-                request.setAttribute("idMarca", request.getParameter("id"));
+                request.setAttribute("idTipo", request.getParameter("id"));
                 acceso = edit;
             break;
             case "update" :
-                int idMarca = Integer.parseInt(request.getParameter("codigo"));
+                int idTipo = Integer.parseInt(request.getParameter("codigo"));
                 descripcion = request.getParameter("descripcion");
                 
-                marca.setId_marca(idMarca);
-                marca.setDescripcion(descripcion);
+                tipo.setId_tipo_vehiculo(idTipo);
+                tipo.setDescripcion(descripcion);
                 
-                daoMarcas.modificar(marca);
+                daoTipoVeh.modificar(tipo);
                 acceso = listar;
             break;
             case "delete":
-                String idMarcas = request.getParameter("id");
-                marca.setId_marca(Integer.parseInt(idMarcas));
-                daoMarcas.eliminar(marca);
+                String idTipos = request.getParameter("id");
+                tipo.setId_tipo_vehiculo(Integer.parseInt(idTipos));
+                daoTipoVeh.eliminar(tipo);
                 acceso=listar;
             break;
         }
         
         RequestDispatcher vista = request.getRequestDispatcher(acceso); //invoca de modo directo un recurso web
         vista.forward(request, response);
-        
-        processRequest(request, response);
     }
 
     /**

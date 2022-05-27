@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.config.Conexion;
-import org.models.ModelMarca;
+import org.models.ModelTipo_Vehiculo;
 
 /**
  *
  * @author MSarazua
  */
-public class DaoMarcas {
-    ModelMarca marca = new ModelMarca();
+public class DaoTipoVeh {
+    ModelTipo_Vehiculo tipo = new ModelTipo_Vehiculo();
     //Variable para crear las sentencias SQL
     String strSql =  "";
     //Se crea un obejto de tipo conexión para manejar la persistencia hacia la base de datos
@@ -27,17 +27,17 @@ public class DaoMarcas {
     boolean respuesta = false;
     
     public List listar() {
-        ArrayList<ModelMarca>lstMarcas = new ArrayList<>();
+        ArrayList<ModelTipo_Vehiculo>lstTipoVeh = new ArrayList<>();
          try {            
-            strSql = "SELECT * FROM MARCA";
+            strSql = "SELECT * FROM TIPO_VEHICULO";
             conexion.open();
             rs = conexion.executeQuery(strSql);                             
             
             while (rs.next()) {
-                ModelMarca marca = new ModelMarca();
-                marca.setId_marca(rs.getInt("ID_MARCA"));
-                marca.setDescripcion(rs.getString("DESCRIPCION"));
-                lstMarcas.add(marca);
+                ModelTipo_Vehiculo tipo = new ModelTipo_Vehiculo();
+                tipo.setId_tipo_vehiculo(rs.getInt("ID_TIPO_VEHICULO"));
+                tipo.setDescripcion(rs.getString("DESCRIPCION"));
+                lstTipoVeh.add(tipo);
             }
             rs.close();
             conexion.close();
@@ -48,13 +48,13 @@ public class DaoMarcas {
             Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
         }
         
-         return lstMarcas;
+         return lstTipoVeh;
     }
     
-    public boolean insertar(ModelMarca marca) {
+    public boolean insertar(ModelTipo_Vehiculo tipo) {
         //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "INSERT INTO MARCA(ID_MARCA, DESCRIPCION) VALUES((SELECT COUNT(ID_MARCA) FROM MARCA)+1, '" + marca.getDescripcion() + "')";
-        System.out.println("Insertar marca: " + strSql);
+        strSql = "INSERT INTO TIPO_VEHICULO(ID_TIPO_VEHICULO, DESCRIPCION) VALUES((SELECT COUNT(ID_TIPO_VEHICULO) FROM TIPO_VEHICULO)+1, '" + tipo.getDescripcion() + "')";
+        System.out.println("Insertar tipo: " + strSql);
         try {
             //se abre una conexión hacia la BD
             conexion.open();
@@ -72,9 +72,9 @@ public class DaoMarcas {
         return respuesta;
     }
     
-    public boolean modificar(ModelMarca marca) {
+    public boolean modificar(ModelTipo_Vehiculo tipo) {
          //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "UPDATE MARCA SET DESCRIPCION = '" + marca.getDescripcion()+ "' WHERE ID_MARCA =  " + marca.getId_marca();
+        strSql = "UPDATE TIPO_VEHICULO SET DESCRIPCION = '" + tipo.getDescripcion()+ "' WHERE ID_TIPO_VEHICULO =  " + tipo.getId_tipo_vehiculo();
         try {
             //se abre una conexión hacia la BD
             conexion.open();
@@ -92,15 +92,15 @@ public class DaoMarcas {
         return respuesta;
     }
     
-    public ModelMarca list(int id) {
+    public ModelTipo_Vehiculo list(int id) {
         try {            
-            strSql = "SELECT * FROM MARCA WHERE ID_MARCA = " + id;
+            strSql = "SELECT * FROM TIPO_VEHICULO WHERE ID_TIPO_VEHICULO = " + id;
             conexion.open();
             rs = conexion.executeQuery(strSql);                             
             
             while (rs.next()) {                
-                marca.setId_marca(rs.getInt("ID_MARCA"));
-                marca.setDescripcion(rs.getString("DESCRIPCION"));           
+                tipo.setId_tipo_vehiculo(rs.getInt("ID_TIPO_VEHICULO"));
+                tipo.setDescripcion(rs.getString("DESCRIPCION"));           
             }
             rs.close();
             conexion.close();
@@ -111,12 +111,12 @@ public class DaoMarcas {
             Logger.getLogger(DaoModule.class.getName()).log(Level.SEVERE, null, ex);            
         }
         
-         return marca;
+         return tipo;
     }
     
-    public boolean eliminar(ModelMarca marcas) {
+    public boolean eliminar(ModelTipo_Vehiculo tipo) {
          //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "DELETE MARCA WHERE ID_MARCA = " + marcas.getId_marca();
+        strSql = "DELETE TIPO_VEHICULO WHERE ID_TIPO_VEHICULO = " + tipo.getId_tipo_vehiculo();
         
         try {
             //se abre una conexión hacia la BD
