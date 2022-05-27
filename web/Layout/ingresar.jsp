@@ -77,6 +77,18 @@
                                     <a class="nav-link" href="indexCliente.jsp">Ver Clientes</a>
                                 </nav>
                             </div>
+
+                            <a class="nav-link collapsed" href="indexTipoPago.jsp" data-bs-toggle="collapse" data-bs-target="#collapseTipoPago" aria-expanded="false" aria-controls="collapseProducto">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Tipo de Pago
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseTipoPago" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="createTipoPago.jsp">Crear Tipo de Pago</a>
+                                    <a class="nav-link" href="indexTipoPago.jsp">Ver Tipo de Pago</a>
+                                </nav>
+                            </div>
                             <a class="nav-link collapsed" href="IngresarVehiculos.jsp" data-bs-toggle="collapse" data-bs-target="#collapseVeh" aria-expanded="false" aria-controls="collapseVeh">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Vehiculos
