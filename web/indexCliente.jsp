@@ -6,9 +6,11 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
-<%@page import="wsUser.ModelUser"%>
 <jsp:include page="Layout/layout.jsp"/>
+<%@page import="java.util.Iterator"%>
+<%@page import="org.models.ModelCliente"%>
+<%@page import="java.util.List"%>
+<%@page import="org.dao.DaoCliente"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,7 +26,7 @@
                         <br>
                         <h1 class="mt-5">Usuario</h1>
                         <br />
-                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-info "  href="UserController?accion=create"  >Crear</a>
+                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-info "  href="ClienteController?accion=create"  >Crear</a>
                         <br />
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                             <thead>
@@ -43,33 +45,28 @@
 
                                 <%
 
-                                    try {
-                                        wsUser.ServicioUser_Service service = new wsUser.ServicioUser_Service();
-                                        wsUser.ServicioUser port = service.getServicioUserPort();
-                                        // TODO process result here
-                                        List<wsUser.ModelUser> result = port.getUsuarios();
-                                        for (wsUser.ModelUser info : result) {
-                                %>  
+                                    DaoCliente infoDao = new DaoCliente();
+                                    List<ModelCliente> lstModel = infoDao.listar();
+                                    Iterator<ModelCliente> iteratorRoll = lstModel.iterator();
+                                    ModelCliente info = null;
+
+                                    while (iteratorRoll.hasNext()) {
+                                        info = iteratorRoll.next();
+                                %>   
 
                                 <tr>
-                                    <td class="text-center"><%= info.getIdUsuario()%></td>
-                                    <td class="text-center"><%= info.getNombre()%> <%= info.getApellido()%></td>
-                                    <td class="text-center"><%= info.getUsuario()%></td>
-                                    <td class="text-center"><%= info.getPassword()%></td>
-                                    <td class="text-center"><%= info.getDescRol()%></td>
-                                    <td class="text-center"><%= info.getFechaCrea()%></td>
-                                    <td class="text-center"><%= info.getFechaMod()%></td>
+                                    <td class="text-center"><%= info.getIdCliente()%></td>
+                                    <td class="text-center"><%= info.getNit()%> <%= info.getApellido()%></td>
+                                    <td class="text-center"><%= info.getNombre()%></td>
+                                    <td class="text-center"><%= info.getApellido()%></td>
+                                    <td class="text-center"><%= info.getTelefono()%></td>
+                                    <td class="text-center"><%= info.getDireccion()%></td>
                                     <td class="text-center"> 
-                                        <a class="btn btn-info" href="UserController?accion=editar&idUsuario=<%=info.getIdUsuario()%>">Editar</a>
-                                        <a class="btn btn-danger" href="UserController?accion=delete&idUsuario=<%=info.getIdUsuario()%>">Eliminar</a>
+                                        <a class="btn btn-info" href="ClienteController?accion=editar&idCliente=<%=info.getIdCliente()%>">Editar</a>
+                                        <a class="btn btn-danger" href="ClienteController?accion=delete&idCliente=<%=info.getIdCliente()%>">Eliminar</a>
                                     </td>
                                 </tr>
-                                <%
-                                        }
-                                    } catch (Exception ex) {
-                                        // TODO handle custom exceptions here
-                                    }
-                                %> 
+                                <%}%>
                             </tbody>
                         </table>
 

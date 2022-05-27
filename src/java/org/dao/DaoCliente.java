@@ -12,17 +12,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.config.Conexion;
-import org.interfaces.CrudUser;
-import org.models.ModelUser;
+import org.interfaces.CrudCliente;
+import org.models.ModelCliente;
 
 /**
  *
  * @author GEOVARU
  */
-public class DaoCliente implements CrudUser{
+public class DaoCliente implements CrudCliente {
 
     //Se crea un objeto publico del Cliente
-    ModelUser usuario = new ModelUser();
+    ModelCliente cliente = new ModelCliente();
     //Variable para crear las sentencias SQL
     String strSql = "";
     //Se crea un obejto de tipo conexión para manejar la persistencia hacia la base de datos
@@ -34,86 +34,65 @@ public class DaoCliente implements CrudUser{
 
     @Override
     public List listar() {
-        ArrayList<ModelUser> listModel = new ArrayList<>();
+        ArrayList<ModelCliente> listModel = new ArrayList<>();
         try {
-            strSql = "SELECT U.ID_USUARIO, U.NOMBRE, U.APELLIDO, U.USUARIO, U.PASSWORD, U.ID_ROL, "
-                    + "U.FECHA_CREA, U.ACTIVO, U.FECHA_MOD, U.USUARIO_CREA, U.USUARIO_MOD, U.CODIGO,"
-                    + " R.NOMBRE DESCROL FROM USUARIO U JOIN ROL R ON R.ID_ROL = U.ID_ROL;";
+            strSql = "SELECT*FROM CLIENTE;";
             conexion.open();
             rs = conexion.executeQuery(strSql);
             while (rs.next()) {
-                ModelUser user = new ModelUser();
-                user.setIdUsuario(rs.getInt("ID_USUARIO"));
-                user.setNombre(rs.getString("NOMBRE"));
-                user.setApellido(rs.getString("APELLIDO"));
-                user.setUsuario(rs.getString("USUARIO"));
-                user.setPassword(rs.getString("PASSWORD"));
-                user.setIdRol(rs.getInt("ID_ROL"));
-                user.setFechaCrea(rs.getString("FECHA_CREA"));
-                user.setActivo(rs.getInt("ACTIVO"));
-                user.setFechaMod(rs.getString("FECHA_MOD"));
-                user.setUsuarioCrea(rs.getString("USUARIO_CREA"));
-                user.setUsuarioMod(rs.getString("USUARIO_MOD"));
-                user.setCodigo(rs.getString("CODIGO"));
-                user.setDescRol(rs.getString("DESCROL"));
-                listModel.add(user);
+                ModelCliente cli = new ModelCliente();
+                cli.setIdCliente(rs.getInt("ID_CLIENTE"));
+                cli.setNit(rs.getString("NIT"));
+                cli.setNombre(rs.getString("NOMBRE"));
+                cli.setApellido(rs.getString("APELLIDO"));
+                cli.setTelefono(rs.getString("TELEFONO"));
+                cli.setDireccion(rs.getString("DIRECCION"));
+                listModel.add(cli);
             }
             rs.close();
             conexion.close();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listModel;
     }
 
     @Override
-    public ModelUser list(int id) {
+    public ModelCliente list(int id) {
         try {
-            strSql = "SELECT * FROM USUARIO WHERE ID_USUARIO = " + id;
+            strSql = "SELECT * FROM CLIENTE WHERE ID_CLIENTE = " + id;
             conexion.open();
             rs = conexion.executeQuery(strSql);
             while (rs.next()) {
-                usuario.setIdUsuario(rs.getInt("ID_USUARIO"));
-                usuario.setNombre(rs.getString("NOMBRE"));
-                usuario.setApellido(rs.getString("APELLIDO"));
-                usuario.setUsuario(rs.getString("USUARIO"));
-                usuario.setPassword(rs.getString("PASSWORD"));
-                usuario.setIdRol(rs.getInt("ID_ROL"));
-                usuario.setFechaCrea(rs.getString("FECHA_CREA"));
-                usuario.setActivo(rs.getInt("ACTIVO"));
-                usuario.setFechaMod(rs.getString("FECHA_MOD"));
-                usuario.setUsuarioCrea(rs.getString("USUARIO_CREA"));
-                usuario.setUsuarioMod(rs.getString("USUARIO_MOD"));
-                usuario.setCodigo(rs.getString("CODIGO"));
+                cliente.setIdCliente(rs.getInt("ID_CLIENTE"));
+                cliente.setNit(rs.getString("NIT"));
+                cliente.setNombre(rs.getString("NOMBRE"));
+                cliente.setApellido(rs.getString("APELLIDO"));
+                cliente.setTelefono(rs.getString("TELEFONO"));
+                cliente.setDireccion(rs.getString("DIRECCION"));
             }
             rs.close();
             conexion.close();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return usuario;
+        return cliente;
     }
 
     @Override
-    public boolean insertar(ModelUser usuario) {
+    public boolean insertar(ModelCliente cliente) {
         //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "INSERT INTO USUARIO (ID_USUARIO, NOMBRE, APELLIDO, USUARIO, PASSWORD, ID_ROL, FECHA_CREA, ACTIVO, FECHA_MOD, USUARIO_CREA, USUARIO_MOD, CODIGO)"
-                + "VALUES ( (SELECT ISNULL(MAX(ID_USUARIO),0) + 1 FROM USUARIO), "
-                + "'" + usuario.getNombre() + "', "
-                + "'" + usuario.getApellido() + "', "
-                + "'" + usuario.getUsuario() + "', "
-                + "'" + usuario.getPassword() + "', "
-                + "'" + usuario.getIdRol() + "', "
-                + "'" + usuario.getFechaCrea() + "', "
-                + "'" + usuario.getActivo() + "', "
-                + "'" + usuario.getFechaMod() + "', "
-                + "'" + usuario.getUsuarioCrea() + "', "
-                + "'" + usuario.getUsuarioMod() + "', "
-                + "'" + usuario.getCodigo() + "'"
+        strSql = "INSERT INTO CLIENTE (ID_CLIENTE, NIT, NOMBRE, APELLIDO, TELEFONO, DIRECCION)"
+                + "VALUES ( (SELECT ISNULL(MAX(ID_CLIENTE),0) + 1 FROM CLIENTE), "
+                + "'" + cliente.getNit() + "', "
+                + "'" + cliente.getNombre() + "', "
+                + "'" + cliente.getApellido() + "', "
+                + "'" + cliente.getTelefono() + "', "
+                + "'" + cliente.getDireccion() + "', "
                 + ")";
         try {
             //se abre una conexión hacia la BD
@@ -123,32 +102,25 @@ public class DaoCliente implements CrudUser{
             //Se cierra la conexión hacia la BD
             conexion.close();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         } catch (Exception ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;
     }
-    
 
     @Override
-    public boolean modificar(ModelUser usuario) {
+    public boolean modificar(ModelCliente cliente) {
         //Se prepara la sentencia SQL a ejecutar en la BD
-        strSql = "UPDATE USUARIO "
+        strSql = "UPDATE CLIENTE "
                 + "SET "
-                + "NOMBRE = '" + usuario.getNombre() + "', "
-                + "APELLIDO = '" + usuario.getApellido() + "', "
-                + "USUARIO = '" + usuario.getUsuario() + "', "
-                + "PASSWORD = '" + usuario.getPassword() + "', "
-                + "ID_ROL = '" + usuario.getIdRol() + "', "
-                + "FECHA_CREA = '" + usuario.getFechaCrea() + "', "
-                + "ACTIVO = '" + usuario.getActivo() + "', "
-                + "FECHA_MOD = '" + usuario.getFechaMod() + "', "
-                + "USUARIO_CREA = '" + usuario.getUsuarioCrea() + "', "
-                + "USUARIO_MOD = '" + usuario.getUsuarioMod() + "', "
-                + "CODIGO = '" + usuario.getCodigo() + "' "
-                + "WHERE ID_USUARIO =  " + usuario.getIdUsuario();
+                + "ID_ROL = '" + cliente.getNit() + "', "
+                + "NOMBRE = '" + cliente.getNombre() + "', "
+                + "APELLIDO = '" + cliente.getApellido() + "', "
+                + "FECHA_CREA = '" + cliente.getTelefono() + "', "
+                + "ACTIVO = '" + cliente.getDireccion() + "' "
+                + "WHERE ID_CLIENTE =  " + cliente.getIdCliente();
         try {
             //se abre una conexión hacia la BD
             conexion.open();
@@ -158,19 +130,19 @@ public class DaoCliente implements CrudUser{
             conexion.close();
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         } catch (Exception ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;
     }
 
     @Override
-    public boolean eliminar(ModelUser usuario) {
+    public boolean eliminar(ModelCliente cliente) {
         //Se prepara la sentencia SQL a ejecutar en la BD
         System.out.print("elimina");
-        strSql = "DELETE  USUARIO WHERE ID_USUARIO =" + usuario.getIdUsuario() + ";";
+        strSql = "DELETE  CLIENTE WHERE ID_CLIENTE =" + cliente.getIdCliente() + ";";
         try {
             //se abre una conexión hacia la BD
             conexion.open();
@@ -179,10 +151,10 @@ public class DaoCliente implements CrudUser{
             //Se cierra la conexión hacia la BD
             conexion.close();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         } catch (Exception ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;
     }

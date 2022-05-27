@@ -6,9 +6,11 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
-<%@page import="wsUser.ModelUser"%>
 <jsp:include page="Layout/layout.jsp"/>
+<%@page import="java.util.Iterator"%>
+<%@page import="org.models.ModelUser"%>
+<%@page import="java.util.List"%>
+<%@page import="org.dao.DaoUser"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,13 +45,15 @@
 
                                 <%
 
-                                    try {
-                                        wsUser.ServicioUser_Service service = new wsUser.ServicioUser_Service();
-                                        wsUser.ServicioUser port = service.getServicioUserPort();
-                                        // TODO process result here
-                                        List<wsUser.ModelUser> result = port.getUsuarios();
-                                        for (wsUser.ModelUser info : result) {
-                                %>  
+                                    DaoUser infoDao = new DaoUser();
+                                    List<ModelUser> lstModel = infoDao.listar();
+                                    Iterator<ModelUser> iteratorRoll = lstModel.iterator();
+                                    ModelUser info = null;
+
+                                    while (iteratorRoll.hasNext()) {
+                                        info = iteratorRoll.next();
+                                %>   
+
 
                                 <tr>
                                     <td class="text-center"><%= info.getIdUsuario()%></td>
@@ -64,12 +68,7 @@
                                         <a class="btn btn-danger" href="UserController?accion=delete&idUsuario=<%=info.getIdUsuario()%>">Eliminar</a>
                                     </td>
                                 </tr>
-                                <%
-                                        }
-                                    } catch (Exception ex) {
-                                        // TODO handle custom exceptions here
-                                    }
-                                %> 
+                                <%}%>
                             </tbody>
                         </table>
 

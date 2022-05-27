@@ -28,77 +28,31 @@
                         <br>
                         <h1 class="mt-5">Crear Usuario</h1>
 
-                        <form class="container row col-12" action="UserController" method="get">
-
+                        <form class="container row col-12" action="ClienteController" method="get">
+                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
+                                <label class="mr-5">Nit</label>
+                                <input type="text" value="" name="nit" class="form-control" id="nit" placeholder="NIT">
+                            </div>
                             <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
                                 <label class="mr-5">Nombre</label>
-                                <input type="text" value="" name="nombre" class="form-control" id="inputPassword2" >
+                                <input type="text" value="" name="nombre" class="form-control" id="nombre" >
                             </div>
                             <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
                                 <label class="mr-5">Apellido</label>
-                                <input type="text" value="" name="apellido" class="form-control" id="inputPassword2" >
-                            </div>
-
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Rol</label>
-                                <select required="" name="idRol" class="form-control">
-                                    <%
-                                        DaoRoll daoTProducto = new DaoRoll();
-                                        ModelRoll pr = null;
-                                        List<ModelRoll> lstProducto = daoTProducto.listar();
-                                        Iterator<ModelRoll> iteratorPr = lstProducto.iterator();
-                                        while (iteratorPr.hasNext()) {
-                                            pr = iteratorPr.next();
-                                    %>
-                                    <option value="<%=pr.getIdRol()%>" ><%=pr.getDescripcion()%></option>      
-                                    <%
-                                        }
-                                    %>
-
-                                </select>
+                                <input type="text" value="" name="apellido" class="form-control" id="apellido" >
                             </div>
                             <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Estado</label>
-                                <select name="activo" class="custom-select custom-select-sm">
-                                    <option value="1" >Activo</option>
-                                    <option value="0" >Inactivo</option>
-                                </select>
+                                <label class="mr-5">Telefono</label>
+                                <input type="text" value="" name="telefono" class="form-control" id="telefono" placeholder="Telefono">
                             </div>
                             <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Usuario</label>
-                                <input type="text" value="" name="usuario" class="form-control" id="inputPassword2" placeholder="Usuario creador">
-                            </div>
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Password</label>
-                                <input type="text" value="" name="password" class="form-control" id="inputPassword2" placeholder="Usuario creador">
-                            </div>
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Usuario creador</label>
-                                <input type="text" value="" name="usuarioCrea" class="form-control" id="inputPassword2" placeholder="Usuario creador">
-                            </div>
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Usuario Mod</label>
-                                <input type="text" value="" name="usuarioMod" class="form-control" id="inputPassword2" placeholder="Usuario Mod">
-                            </div>
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Fecha creación</label>
-                                <input type="date" value="" name="fechaCrea" class="form-control" id="inputPassword2" placeholder="Fecha creación">
-                            </div>
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Fecha Mod</label>
-                                <input type="date" value="" name="fechaMod" class="form-control" id="inputPassword2" placeholder="Fecha Mod">
-                            </div>   
-                            <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Codigo</label>
-                                <input type="text" value="" name="codigo" class="form-control" id="inputPassword2" placeholder="Fecha Mod">
+                                <label class="mr-5">Direccion</label>
+                                <input type="text" value="" name="direccion" class="form-control" id="direccion" placeholder="Direccion">
                             </div>   
                             <div class="col-12">
                             </div>   
-
                             <button type="submit" name="accion" value="store" class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-primary " >Crear</button>
-
-                            <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-secondary "  href="UserController?accion=read" >Regresar</a>
-
+                            <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-secondary "  href="ClienteController?accion=read" >Regresar</a>
                         </form>
                     </div>
                 </div>
