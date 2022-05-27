@@ -68,7 +68,7 @@
                             </div>
                             <a class="nav-link collapsed" href="indexCliente.jsp" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseProducto">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Usuarios
+                                Clientes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseCliente" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">

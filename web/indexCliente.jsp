@@ -33,11 +33,9 @@
                                 <tr>
                                     <th class="text-center">Id</th>
                                     <th class="text-center">Nombre</th>
-                                    <th class="text-center">Usuario</th>
-                                    <th class="text-center">Pass</th>
-                                    <th class="text-center">Rol</th>
-                                    <th class="text-center">Fecha creacion</th>
-                                    <th class="text-center">Fecha Actualizacion</th>
+                                    <th class="text-center">Apellido</th>
+                                    <th class="text-center">Telefono</th>
+                                    <th class="text-center">Direccion</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
                             </thead>
@@ -56,7 +54,6 @@
 
                                 <tr>
                                     <td class="text-center"><%= info.getIdCliente()%></td>
-                                    <td class="text-center"><%= info.getNit()%> <%= info.getApellido()%></td>
                                     <td class="text-center"><%= info.getNombre()%></td>
                                     <td class="text-center"><%= info.getApellido()%></td>
                                     <td class="text-center"><%= info.getTelefono()%></td>

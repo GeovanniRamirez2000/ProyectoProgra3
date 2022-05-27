@@ -33,7 +33,7 @@ public class Conexion {
         try {
             Class.forName(driver);
 
-            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo200");
+            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo2000");
 
          
 
