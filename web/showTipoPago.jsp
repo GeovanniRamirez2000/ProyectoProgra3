@@ -37,10 +37,10 @@
                                 cliList = infoDao.list(idTipoPago);
 
                             %>
-                            <input type="hidden" name="idCliente" value="<%= cliList.getIdTipoPago()%>">
+                            <input type="hidden" name="idTipoPago" value="<%= cliList.getIdTipoPago()%>">
                             <div class=" col-12 mb-2 col-lg-3 col-md-3 col-sm-5">
-                                <label class="mr-5">Nit</label>
-                                <input type="text" value="<%= cliList.getDescripcion()%>" name="nit" class="form-control" id="nit" placeholder="nit">
+                                <label class="mr-5">Descripcion</label>
+                                <input type="text" value="<%= cliList.getDescripcion()%>" name="descripcion" class="form-control" id="nit" placeholder="descripcion">
                             </div>
                             <div class="col-12">
                             </div>   
