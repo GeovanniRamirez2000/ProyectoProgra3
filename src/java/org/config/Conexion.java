@@ -32,7 +32,7 @@ public class Conexion {
     public Connection open() throws ClassNotFoundException {
         try {
             Class.forName(driver);
-            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "PUTO EL QUE LO LEA");
+            coneccion = DriverManager.getConnection(stringConnectionUrl, "sa", "Alfredo2000");
 
         } catch (SQLException e) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
