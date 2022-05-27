@@ -133,6 +133,18 @@
                                     <a class="nav-link" href="verTipoVeh.jsp">Ver Tipo de vehículos</a>
                                 </nav>
                             </div>
+                             <a class="nav-link collapsed" href="IngresarTipoVeh.jsp" data-bs-toggle="collapse" data-bs-target="#IngresarDev" aria-expanded="false" aria-controls="IngresarDev">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Devoluciones
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="IngresarDev" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="registrarDevolucion.jsp">Registrar Devolución</a>
+                                     <a class="nav-link" href="verDevoluciones.jsp">Ver Devoluciones</a>
+                                   
+                                </nav>
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePedido" aria-expanded="false" aria-controls="collapsePedido">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Permisos

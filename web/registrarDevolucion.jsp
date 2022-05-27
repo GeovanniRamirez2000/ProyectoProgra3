@@ -1,0 +1,91 @@
+<%-- 
+    Document   : registrarDevolucion
+    Created on : may 26, 2022, 11:36:20 p.m.
+    Author     : INSPIRON 7000 SERIES
+--%>
+
+<%@page import="org.models.ModelUser"%>
+<%@page import="org.dao.DaoUser"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+
+<%@page import="org.models.ModelEstado"%>
+<%@page import="org.models.ModelTipo_Vehiculo"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="org.models.ModelMarca"%>
+<%@page import="org.dao.DaoVehiculos"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="Layout/layout.jsp"/>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body class="col-md-12" >
+
+        <div id="layoutSidenav_content">
+            <main >
+
+                <div class="container-fluid px-4 row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10 ">
+                        <br>
+                        <h1 class="mt-5">Registrar Devolucion</h1>
+                        <form id="form-work" class=""  action="ControllerDevolucion" method="get"></form>
+                        <form class="container col-10 col-md-10 col-lg-10" class="row g-3" action="ControllerDevolucion" method="get">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Renta </label>
+                                <input type="text" name="id_renta" class="form-control" id="inputPassword2" placeholder="" >
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Serie </label>
+                                <input type="text" name="serie" class="form-control" id="inputPassword2" placeholder="" >
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Fecha </label>
+                                <input type="date" name="fecha" class="form-control" id="inputPassword2" placeholder="" >
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Observaciones </label>
+                                <input type="text" name="observaciones" class="form-control" id="inputPassword2" placeholder="" >
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Usuario</label>
+                                 <select name="id_usuario" class="custom-select custom-select-sm">
+                     <%
+                                    DaoUser daouser = new DaoUser();
+                                    List<ModelUser> lstuser = daouser.listar();
+                                    Iterator<ModelUser> iteratorUser = lstuser.iterator(); 
+                                    ModelUser mostrarUser = null;
+                                  
+                                    while (iteratorUser.hasNext()){
+                                            mostrarUser = iteratorUser.next(); 
+                                %>
+                    <option value="<%= mostrarUser.getIdUsuario()%>"><%= mostrarUser.getNombre() %></option>
+                     <%}%>
+                </select>
+                               
+                            </div>
+                 <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Dias de atraso </label>
+                                <input type="text" name="dias_atraso" class="form-control" id="inputPassword2" placeholder="" >
+                            </div>
+                 <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Mora </label>
+                                <input type="text" name="mora" class="form-control" id="inputPassword2" placeholder="" >
+                            </div>
+                          
+                            
+                                                  
+                            <button type="submit" name="accion" value="ingresar" class="btn btn-primary mb-2" >Registrar Devolución</button>
+                           
+                      </form>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </body>
+</html>
