@@ -28,6 +28,7 @@ public class Conexion {
             + "databaseName=PROYECTO_PROGRA;";
     //Driver o controlador JDBC
     String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    
 
     public Connection open() throws ClassNotFoundException {
         try {
