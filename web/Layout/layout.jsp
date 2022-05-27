@@ -55,17 +55,18 @@
                                 </nav>
                             </div>
                             
-                            <a class="nav-link collapsed" href="Usuario/index.jsp" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseProducto">
+                            <a class="nav-link collapsed" href="indexUser.jsp" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseProducto">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Usuarios
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="Usuario/create.jsp">Crear Usuarios</a>
+                                    <a class="nav-link" href="createUser.jsp">Crear Usuarios</a>
+                                    <a class="nav-link" href="indexUser.jsp">Ver Usuarios</a>
                                 </nav>
                             </div>
-                             <a class="nav-link collapsed" href="Usuario/index.jsp" data-bs-toggle="collapse" data-bs-target="#collapseVeh" aria-expanded="false" aria-controls="collapseVeh">
+                             <a class="nav-link collapsed" href="IngresarVehiculos.jsp" data-bs-toggle="collapse" data-bs-target="#collapseVeh" aria-expanded="false" aria-controls="collapseVeh">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Vehiculos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

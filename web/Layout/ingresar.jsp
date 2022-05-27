@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>ExamenParcial2</title>
+        <title>ProyectoWeb</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -25,7 +25,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/ExamenParcial2">Geovanni Ramirez</a>
+            <a class="navbar-brand ps-3" href="/ExamenParcial2">PROGRAMACION 3</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         </nav>
@@ -40,17 +40,9 @@
                                 Inicio
                             </a>
                             <div class="sb-sidenav-menu-heading">Mantenimientos</div>
-                            <a class="nav-link collapsed" href="createModules.jsp" data-bs-toggle="collapse" data-bs-target="#collapseCliente" aria-expanded="false" aria-controls="collapseCliente">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Módulos
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseCliente" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="createModules.jsp">Crear Modulos</a>
-                                    <a class="nav-link" href="">Ver Modulos</a>
-                                </nav>
-                            </div>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="indexModules.jsp">Módulos</a>
+                            </nav>
                             <a class="nav-link collapsed" href="createRolls.jsp" data-bs-toggle="collapse" data-bs-target="#collapseProducto" aria-expanded="false" aria-controls="collapseProducto">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Roles
@@ -62,6 +54,41 @@
                                     <a class="nav-link" href="viewRolls.jsp">Ver Roles</a>
                                 </nav>
                             </div>
+                            
+                            <a class="nav-link collapsed" href="indexUser.jsp" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseProducto">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Usuarios
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="createUser.jsp">Crear Usuarios</a>
+                                    <a class="nav-link" href="indexUser.jsp">Ver Usuarios</a>
+                                </nav>
+                            </div>
+                             <a class="nav-link collapsed" href="IngresarVehiculos.jsp" data-bs-toggle="collapse" data-bs-target="#collapseVeh" aria-expanded="false" aria-controls="collapseVeh">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Vehiculos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseVeh" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="IngresarVehiculos.jsp">Ingresar Vehiculos</a>
+                                     <a class="nav-link" href="verVehiculos.jsp">Ver Vehiculos</a>
+                                </nav>
+                            </div>
+                             <a class="nav-link collapsed" href="Usuario/index.jsp" data-bs-toggle="collapse" data-bs-target="#collapseVehE" aria-expanded="false" aria-controls="collapseVehE">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Estado Vehiculos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseVehE" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="cambiarEstadoVehiculos.jsp">Cambiar Estado</a>
+                          
+                                </nav>
+                            </div>
+                            
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLugares" aria-expanded="false" aria-controls="collapseLugares">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
@@ -102,21 +129,19 @@
                                     <a class="nav-link" href="Permisos.jsp">Agregar permisos</a>
                                 </nav>
                             </div>
-
                             <%
                                 DaoModule daoModule = new DaoModule();
                                 List<ModuleModel> lstModulos = daoModule.listarMenu();
                                 Iterator<ModuleModel> iteratorCliente = lstModulos.iterator();
                                 ModuleModel module = null;
-                                while (iteratorCliente.hasNext()) {
-                                    module = iteratorCliente.next();
-                            %>               
+                                while (iteratorCliente.hasNext()){
+                                module = iteratorCliente.next();
+                            %>
                             <a class="nav-link" href="<%= module.getPath()%>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 <%= module.getNombre()%>
                             </a>
                             <%}%>
-
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
