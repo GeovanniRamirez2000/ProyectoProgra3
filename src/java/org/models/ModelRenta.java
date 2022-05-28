@@ -5,6 +5,8 @@ package org.models;
 public class ModelRenta {
     int ID_RENTA;
     String SERIE;
+    String nombre;
+    String descripcion;
     int ID_CLIENTE;
     int ID_USUARIO;
     int ID_TIPO_PAGO;
@@ -14,6 +16,22 @@ public class ModelRenta {
     int ID_VEHICULO;
     int PRECIO_ALQUILER;
     int Total;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public int getID_VEHICULO_ESTADO() {
         return ID_VEHICULO_ESTADO;

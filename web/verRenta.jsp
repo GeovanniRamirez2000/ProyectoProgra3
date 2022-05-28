@@ -1,4 +1,5 @@
 
+<%@page import="org.models.ModelRenta"%>
 <%@page import="org.dao.DaoRenta"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="org.models.ModelRoll"%>
@@ -25,55 +26,54 @@
                     </div>
                     <div class="col-md-10 ">
                         <br>
-                        <h1 class="mt-5">Seleccione el vehiculo que desea rentar</h1>
+                        <h1 class="mt-5">Rentas</h1>
+                        <a class=" mr-5 col-12 mb-2 col-lg-3 col-md-3 col-sm-5 btn btn-success "  href="Renta.jsp"  >+ Agregar Renta</a>
                         <table border="1" width="1" cellspacing="1" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="text-center">ID_VEHICULO</th>
-                            <th class="text-center">MARCA</th>
-                            <th class="text-center">TIPO DE VEHICULO</th>
-                            <th class="text-center">ESTADO DEL VEHICULO</th>
-                            <th class="text-center">MODELO</th>
-                            <th class="text-center">OPCION</th>
+                            <th class="text-center">ID_RENTA</th>
+                            <th class="text-center">SERIE</th>
+                            <th class="text-center">NOMBRE</th>
+                            <th class="text-center">DESCRIPCION</th>
+                            <th class="text-center">FECHA_PRESTAMO</th>
+                            <th class="text-center">FECHA_DEVOLUCION</th>
+                            <th class="text-center">TOTAL</th>
                           
                         </tr>
                     </thead>
                   
                     <%
                         DaoRenta daoMostrar = new DaoRenta();
-                        List<Modelvehiculo> lstEstado = daoMostrar.listarVehiculosDisponibles();
-                        Iterator<Modelvehiculo> iteratorVehiculos = lstEstado.iterator();
-                        Modelvehiculo mostrarVehiculos = null;
-                        while (iteratorVehiculos.hasNext()){
-                           mostrarVehiculos = iteratorVehiculos.next();            
+                        List<ModelRenta> lstRentas = daoMostrar.MostrarRentas();
+                        Iterator<ModelRenta> iteratorRentas = lstRentas.iterator();
+                        ModelRenta mostrarRentas = null;
+                        while (iteratorRentas.hasNext()){
+                           mostrarRentas = iteratorRentas.next();            
                     %>                     
                     <tbody>
                         <tr>
                             <td class="text-center">
-                                <%=mostrarVehiculos.getId_vehiculo()%>
+                                <%=mostrarRentas.getID_RENTA() %>
                             </td>
                                 
                             <td class="text-center">
-                                <%=mostrarVehiculos.getMarca()%> 
+                                <%=mostrarRentas.getSERIE() %> 
                             </td>
                             <td class="text-center">
-                               <%=mostrarVehiculos.getTipo_de_vehiculo()%> 
+                               <%=mostrarRentas.getNombre() %> 
                             </td> 
                               <td class="text-center">
-                                <%=mostrarVehiculos.getEstado()%>
+                                <%=mostrarRentas.getDescripcion() %>
                               </td>
                               <td class="text-center">
-                                 <%=mostrarVehiculos.getModelo()%> 
+                                 <%=mostrarRentas.getFECHA_PRESTAMO() %> 
                               </td>
-                             <td class="text-center">
-                                 <a href="ControllerRentas?accion=renta&id=<%=mostrarVehiculos.getId_vehiculo()%>">Rentar</a>
-                    
+                              <td class="text-center">
+                                 <%=mostrarRentas.getFECHA_DEVOLUCION() %> 
                               </td>
-                             
-                               
-                            
-                          
-                         
+                              <td class="text-center">
+                                 <%=mostrarRentas.getTotal() %> 
+                              </td>
                         </tr>
                         <%}%>
                     

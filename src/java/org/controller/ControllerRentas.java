@@ -23,7 +23,7 @@ import org.models.ModelRenta;
 @WebServlet(name = "ControllerRentas", urlPatterns = {"/ControllerRentas"})
 public class ControllerRentas extends HttpServlet {
 String Renta="ProcesoRenta.jsp";
-String vehiculos="Renta.jsp";
+String verRenta="verRenta.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -117,7 +117,7 @@ String vehiculos="Renta.jsp";
                  opcion.Detalle_renta(renta);
                  opcion.actualizarVehiculo(renta);
                  
-                 acceso=vehiculos;
+                 acceso=verRenta;
              break;
          
             

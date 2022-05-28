@@ -133,6 +133,18 @@
                                     <a class="nav-link" href="verTipoVeh.jsp">Ver Tipo de vehículos</a>
                                 </nav>
                             </div>
+                             <a class="nav-link collapsed" href="Renta.jsp" data-bs-toggle="collapse" data-bs-target="#IngresarRen" aria-expanded="false" aria-controls="IngresarRen">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Rentas
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="IngresarRen" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="Renta.jsp">Registrar Renta</a>
+                                     <a class="nav-link" href="verRenta.jsp">Ver Rentas</a>
+                                   
+                                </nav>
+                            </div>
                              <a class="nav-link collapsed" href="IngresarTipoVeh.jsp" data-bs-toggle="collapse" data-bs-target="#IngresarDev" aria-expanded="false" aria-controls="IngresarDev">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Devoluciones

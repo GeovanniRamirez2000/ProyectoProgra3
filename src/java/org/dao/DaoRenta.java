@@ -246,7 +246,7 @@ public class DaoRenta {
          return lstvehiculos;
     }
        public List MostrarRentas() {
-        ArrayList<ModelRenta>lstvehiculos = new ArrayList<>();
+        ArrayList<ModelRenta>lstRentas = new ArrayList<>();
          try {            
             strSql = "select re.ID_RENTA,re.SERIE,ce.NOMBRE,tp.DESCRIPCION,re.FECHA_PRESTAMO,re.FECHA_DEVOLUCION,re.TOTAL\n" +
 "    from RENTA re\n" +
@@ -263,8 +263,14 @@ public class DaoRenta {
             while (rs.next()) {
                 ModelRenta objre = new ModelRenta();
                 objre.setID_RENTA(rs.getInt("ID_RENTA"));
-                objre.setSERIE(rs.getNString("SERIE"));
-                lstvehiculos.add(objve);
+                objre.setSERIE(rs.getString("SERIE"));
+                objre.setNombre(rs.getString("NOMBRE"));
+                objre.setDescripcion(rs.getString("DESCRIPCION"));
+                objre.setFECHA_PRESTAMO(rs.getString("FECHA_PRESTAMO"));
+                objre.setFECHA_DEVOLUCION(rs.getString("FECHA_DEVOLUCION"));
+                objre.setTotal(rs.getInt("TOTAL"));
+                
+                lstRentas.add(objre);
             }
             rs.close();
             conexion.close();
@@ -275,7 +281,7 @@ public class DaoRenta {
             Logger.getLogger(DaoVehiculos.class.getName()).log(Level.SEVERE, null, ex);            
         }
         
-         return lstvehiculos;
+         return lstRentas;
     }
     
 }

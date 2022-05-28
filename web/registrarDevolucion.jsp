@@ -42,7 +42,11 @@
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Serie </label>
-                                <input type="text" name="serie" class="form-control" id="inputPassword2" placeholder="" >
+                               
+                                  <select name="serie" class="form-control">
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                    </select><br>
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Fecha </label>

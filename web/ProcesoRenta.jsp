@@ -31,7 +31,7 @@
     <center>
       
     </center>
-    <center><form action="ControllerRentas" method="get">
+    <center><form class="container col-10 col-md-10 col-lg-10" action="ControllerRentas" method="get">
                <%
                           
                          DaoVehiculos daoVehiculo = new DaoVehiculos();
@@ -41,14 +41,14 @@
                          
                          
                       %>
-            serie<br>
+            Serie<br>
             <select name="serie" class="form-select">
                 <option value="A">A</option>
                 <option value="B">B</option>
             </select><br>
-           
+            
             Cliente<br>
-            <select name="id_cliente" class="form-select">
+            <select name="id_cliente" class="form-control">
                  <%
                                         DaoRenta daoRenta = new DaoRenta();
                                         List<ModelCliente> lstRenta = daoRenta.listarCliente();
