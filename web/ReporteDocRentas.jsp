@@ -16,14 +16,21 @@
 <%@page import="org.models.Modelvehiculo"%>
 <%@page import="org.dao.DaoVehiculos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="Layout/layout.jsp"/>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
+     <script language="javascript">
+    function imprimir()
+    {
+     if (window.print) window.print()
+     else alert("puede utilizar Crtl+p");
+    }
+   </script>
     <body class="col-md-12" >
-
+<center>
         <div id="layoutSidenav_content">
             <main >
 
@@ -33,7 +40,7 @@
                     <div class="col-md-10 ">
                         <br>
                         <h1 class="mt-5">Reporte de Rentas</h1>
-                        <table border="1" width="1" cellspacing="1" class="table table-bordered">
+                        <table>
                             <thead>
                                 <tr>
                                     <th class="text-center">ID_RENTA</th>
@@ -87,11 +94,12 @@
                             <br>
                             </tbody>
                         </table>
-
+<p><input type="button" name="imprimir" value="presione para imprimir" onClick="javascript:imprimir();"></p>
                     </div>
                 </div>
             </main>
 
         </div>
+    </center>
     </body>
 </html>

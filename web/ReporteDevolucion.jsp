@@ -16,12 +16,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script language="javascript">
+    function imprimir()
+    {
+     if (window.print) window.print()
+     else alert("puede utilizar Crtl+p");
+    }
+   </script>
     </head>
-    <body>
-        <h1>Devoluciones</h1>
-          <table border="0">
-                    <thead>
-                        <tr>
+    <body class="col-md-12" >
+<center>
+        <div id="layoutSidenav_content">
+            <main >
+
+                <div class="container-fluid px-4 row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10 ">
+                        <br>
+                        <h1 class="mt-5">Reporte de Devoluciones de Vehiculos</h1>
+                        <table>
+                            <thead>
+                               <tr>
                             <th class="text-center">#</th>
                             <th class="text-center">RENTA</th>
                             <th class="text-center">SERIE</th>
@@ -32,17 +48,18 @@
                             <th class="text-center">MORA</th>
 
                         </tr>
-                    </thead>
-                    <%
+                            </thead>
+
+                             <%
                         DaoDevolucion daoDevolucion = new DaoDevolucion();
                         List<ModelDevolucion> lstDevolucion = daoDevolucion.listarDevoluciones();
                         Iterator<ModelDevolucion> iteratorDevolucion = lstDevolucion.iterator();
                         ModelDevolucion mostrarDevoluciones = null;
                         while (iteratorDevolucion.hasNext()){
                            mostrarDevoluciones = iteratorDevolucion.next();            
-                    %>                     
-                    <tbody>
-                        <tr>
+                    %>                
+                            <tbody>
+                                 <tr>
                             <td class="text-center">
                                 <%= mostrarDevoluciones.getId_devolucion()%>
                             </td>
@@ -71,11 +88,21 @@
                               </td>
                               
                         </tr>
-                        <br><br><br>
-                    </tbody>
-                     <%}%>
-                </table>  
-              
-                
+                                <%}%>
+
+
+                            <br><br>
+                            <br>
+                            </tbody>
+                        </table>
+<p><input type="button" name="imprimir" value="presione para imprimir" onClick="javascript:imprimir();"></p>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </center>
     </body>
+   
+    
 </html>

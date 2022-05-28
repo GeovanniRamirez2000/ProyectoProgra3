@@ -23,12 +23,20 @@
     }
    </script>
     </head>
-    <body>
-    <center>
-        <h1>REPORTE DE VEHICULOS RENTADOS</h1>
-          <table >
-                  
-                        <tr>
+    <body class="col-md-12" >
+<center>
+        <div id="layoutSidenav_content">
+            <main >
+
+                <div class="container-fluid px-4 row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10 ">
+                        <br>
+                        <h1 class="mt-5">Reporte de Vehiculos Rentados</h1>
+                        <table>
+                            <thead>
+                                <tr>
                             <th class="text-center">ID_VEHICULO</th>
                             <th class="text-center">MARCA</th>
                             <th class="text-center">TIPO DE VEHICULO</th>
@@ -37,8 +45,9 @@
                             <th class="text-center">OPCION</th>
 
                         </tr>
-                 
-                   <%
+                            </thead>
+
+                             <%
                         DaoVehiculos daoMostrar = new DaoVehiculos();
                         List<Modelvehiculo> lstEstado = daoMostrar.listarVehiculosRentados();
                         Iterator<Modelvehiculo> iteratorVehiculos = lstEstado.iterator();
@@ -46,8 +55,8 @@
                         while (iteratorVehiculos.hasNext()){
                            mostrarVehiculos = iteratorVehiculos.next();            
                     %>                      
-                    <tbody>
-                        <tr>
+                            <tbody>
+                                  <tr>
                              <td class="text-center">
                                 <%=mostrarVehiculos.getId_vehiculo()%>
                             </td>
@@ -66,15 +75,20 @@
                               </td>
                               
                         </tr>
-                        <br><br><br>
-                    </tbody>
-                     <%}%>
-                </table> 
-                </center>
-              <center>
-   
-   <p><input type="button" name="imprimir" value="presione para imprimir" onClick="javascript:imprimir();"></p>
-  </center>
-                
+                                <%}%>
+
+
+                            <br><br>
+                            <br>
+                            </tbody>
+                        </table>
+<p><input type="button" name="imprimir" value="presione para imprimir" onClick="javascript:imprimir();"></p>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </center>
     </body>
+  
 </html>
