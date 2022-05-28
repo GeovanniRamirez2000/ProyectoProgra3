@@ -4,6 +4,8 @@
     Author     : INSPIRON 7000 SERIES
 --%>
 
+<%@page import="org.models.ModelRenta"%>
+<%@page import="org.dao.DaoRenta"%>
 <%@page import="org.models.Modelvehiculo"%>
 <%@page import="org.models.ModelUser"%>
 <%@page import="org.dao.DaoUser"%>
@@ -36,10 +38,24 @@
                         <h1 class="mt-5">Registrar Devolucion</h1>
                         <form id="form-work" class=""  action="ControllerDevolucion" method="get"></form>
                         <form class="container col-10 col-md-10 col-lg-10" class="row g-3" action="ControllerDevolucion" method="get">
-                            <div class="form-group mx-sm-3 mb-2">
-                                <label class="mr-5">Renta </label>
-                                <input type="text" name="id_renta" class="form-control" id="inputPassword2" placeholder="" >
+                             <div class="form-group mx-sm-3 mb-2">
+                                <label class="mr-5">Renta</label>
+                                 <select name="id_renta" class="custom-select custom-select-sm">
+                     <%
+                                    DaoRenta daorenta = new DaoRenta();
+                                    List<ModelRenta> lstrenta = daorenta.MostrarRentas();
+                                    Iterator<ModelRenta> iteratorRenta = lstrenta.iterator(); 
+                                    ModelRenta mostrarRenta = null;
+                                  
+                                    while (iteratorRenta.hasNext()){
+                                            mostrarRenta = iteratorRenta.next(); 
+                                %>
+                    <option value="<%= mostrarRenta.getID_RENTA() %>">#<%= mostrarRenta.getID_RENTA()  %>--CLIENTE:  <%= mostrarRenta.getNombre()  %></option>
+                     <%}%>
+                </select>
+                               
                             </div>
+                            
                             <div class="form-group mx-sm-3 mb-2">
                                 <label class="mr-5">Serie </label>
                                

@@ -4,36 +4,24 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/ControllerDevolucion.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoModule.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModuleModel.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/verVehiculos.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoLogin.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/interfaces/CrudModule.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/registrarDevolucion.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/Layout/ingresar.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/createRolls.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/interfaces/CrudRoll.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModelRoll.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoUser.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModelDevolucion.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/ModuleController.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/viewRolls.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModelUser.java</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/indexUser.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/PermisosController.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/index.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/Layout/layout.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoRoll.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/interfaces/CrudUser.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/verTipoVeh.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/verVehiculos.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/ModificarEstadoVehiculos.jsp</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/config/Conexion.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/updateRolls.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/ReporteDevolucion.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/RollController.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/LoginController.java</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/createModules.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/css/styles.css</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/verPermisos.jsp</file>
-            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/UserController.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/registrarDevolucion.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/ControllerRentas.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/ClienteController.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/ModificarVehiculos.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/cambiarEstadoVehiculos.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/indexTipoPago.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoDevolucion.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/verDevoluciones.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/models/ModelDevolucion.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/indexCliente.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/controller/ControllerVehiculo.java</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/viewRolls.jsp</file>
+            <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/src/java/org/dao/DaoVehiculos.java</file>
             <file>file:/C:/Users/INSPIRON%207000%20SERIES/Documents/NetBeansProjects/ProyectoProgra3/web/IngresarVehiculos.jsp</file>
         </group>
     </open-files>
