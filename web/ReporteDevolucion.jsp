@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-md-10 ">
                         <br>
-                        <h1 class="mt-5">Reporte de Devoluciones de Vehiculos</h1>
+                        <h1 class="mt-5">Reporte de Devoluciones de Vehiculos.</h1>
                         <table>
                             <thead>
                                <tr>
